@@ -2,7 +2,9 @@
 
 const config = {
   apiOrigins: {
-    production: 'https://ga-wdi-boston.herokuapp.com'
+    development: 'http://local4741',
+    production: 'https://advice-app-maggicorp.herokuapp.com'
+    // production: 'https://ga-wdi-boston.herokuapp.com'
   }
 }
 

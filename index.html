@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-      <title>Example</title>
+      <title>Advice App</title>
       <meta name="viewport" content="width=device-width, initial-scale=1">
 
       <!-- Do not add `link` tags unless you know what you are doing -->
@@ -10,16 +10,81 @@
       <!-- Do not add `script` tags unless you know what you are doing -->
       <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
       <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
+      <link href="https://fonts.googleapis.com/css?family=Eagle+Lake|Shadows+Into+Light" rel="stylesheet">
+
     </head>
     <body class="container-fluid">
-      <h1>Example</h1>
+      <div class="wrapper">
+      <header><h1>You give the best advice</h1></header>
+      <main>
 
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
-      eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-      minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex
-      ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
-      velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
-      cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id
-      est laborum.</p>
+        <form id="sign-up" class="clear-input">
+          <fieldset>
+            <legend> Sign up </legend>
+            <input type="text" name="credentials[email]" placeholder="username"><br>
+            <input type="password" name="credentials[password]" placeholder="password"><br>
+            <input class="clear-input" type="password" name="credentials[password_confirmation]" placeholder="password confirmation"><br>
+            <input class="push btn" type="submit" name="submit" value="Sign Up">
+          </fieldset>
+        </form>
+
+        <form id="sign-in" class="clear-input">
+          <fieldset>
+            <legend> Sign in </legend>
+            <input class="clear-input" type="text" name="credentials[email]" placeholder="username"><br>
+            <input class="clear-input" type="password" name="credentials[password]" placeholder="password"><br>
+            <input class="push btn" type="submit" name="submit" value="Sign In">
+          </fieldset>
+        </form>
+
+
+
+        <form id="change-password" class="clear-input change-password">
+          <fieldset>
+            <legend> Change Password </legend>
+            <input type="password" name="passwords[old]" placeholder="old password"><br>
+            <input type="password" name="passwords[new]" placeholder="new password"><br>
+            <input class="push btn" type="submit" name="submit" value="Change Password">
+          </fieldset>
+        </form>
+
+        <form id="sign-out" class="sign-out">
+          <fieldset>
+            <legend> Sign Out </legend>
+            <input class="push btn" type="submit" name="submit" value="Sign Out">
+          </fieldset>
+        </form>
+
+
+        <form id="get_advice" class="clear-input get_advice">
+          <fieldset>
+            <legend> Get Advice </legend>
+            <div class="display_advice"> Advice is here </div>
+            <input class="push btn" type="submit" name="submit" value="Get Advice">
+            <hr>
+            <input class="push btn" type="submit" name="submit" value="Edit this Advice">
+       <br>
+              <input type="text" name="advice" placeholder="Change advice here">
+                    <input class="push btn" type="submit" name="submit" value="Submit Changes">
+       		<hr>
+            <input class="push btn delete" type="submit" name="submit" value="Delete This Advice">
+          </fieldset>
+        </form>
+
+        <form id="alter_advice" class="alter_advice">
+          <fieldset>
+            <legend> Alter Advice </legend>
+               <input type="text" name="advice" placeholder="Give yourself advice">
+                    <input class="push btn" type="submit" name="submit" value="Submit New Advice">
+                    <hr>
+                <input class="push btn" type="submit" name="submit" value="Add Default Advice Library">
+            <input class="push delete btn" type="submit" name="submit" value="Delete All Advice">
+
+          </fieldset>
+        </form>
+
+      </main>
+      <footer>MaggiCorp &copy;2017</footer>
+      	</div>
     </body>
 </html>
