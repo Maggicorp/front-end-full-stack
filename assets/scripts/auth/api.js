@@ -9,6 +9,7 @@ const signUp = (data) => {
   return $.ajax({
     url: config.apiOrigin + '/sign-up',
     method: 'POST',
+    header: 'Content-Type: application/json',
     data
   })
 }
