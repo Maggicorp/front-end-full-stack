@@ -42,7 +42,7 @@ const signOutSuccess = () => {
   $('#sign-in').css('display', 'block')
   $('#sign-up').css('display', 'block')
   $('.get_advice').css('display', 'none')
-  $('.alter_advice').css('display', 'none')
+  $('.alter_advice').cssgit('display', 'none')
   $('.change-password').css('display', 'none')
   $('#sign-up').css('display', 'none')
   $('.clear-input').trigger('reset')
