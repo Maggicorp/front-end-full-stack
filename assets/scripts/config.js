@@ -2,7 +2,7 @@
 
 const config = {
   apiOrigins: {
-    production: 'https://advice-app-maggicorp.herokuapp.com',
+    production: 'https://adviceappmaggicorp.herokuapp.com',
     development: 'http://localhost:4741'
   }
 }
