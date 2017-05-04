@@ -17,6 +17,8 @@ const signInSuccess = (response) => {
   store.user = response.user
   $('.sign-out').css('display', 'block')
   $('.change-password').css('display', 'block')
+  $('.get_advice').css('display', 'block')
+  $('.alter_advice').css('display', 'block')
   $('#sign-in').css('display', 'none')
   $('#sign-up').css('display', 'none')
 }
@@ -39,6 +41,10 @@ const signOutSuccess = () => {
   // store.games = null
   $('#sign-in').css('display', 'block')
   $('#sign-up').css('display', 'block')
+  $('.get_advice').css('display', 'none')
+  $('.alter_advice').css('display', 'none')
+  $('.change-password').css('display', 'none')
+  $('#sign-up').css('display', 'none')
   $('.clear-input').trigger('reset')
 }
 

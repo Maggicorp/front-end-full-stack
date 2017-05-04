@@ -50,6 +50,22 @@ form {
 	background-color: rgba(240,248,255, .5)
 }
 
+.change-password {
+  display: none;
+}
+
+.sign-out {
+  display: none;
+}
+
+.get_advice {
+  display: none;
+}
+
+.alter_advice {
+  display: none;
+}
+
 .btn {
   background: #3498db;
   background-image: -webkit-linear-gradient(top, #3498db, #2980b9);
