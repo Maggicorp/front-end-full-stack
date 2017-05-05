@@ -54,6 +54,7 @@ const showAdvice = () => {
 const addAdvice = (data) => {
   console.log('at show advice')
   console.log(data)
+  console.log(data.advice)
   return $.ajax({
     url: config.apiOrigin + '/advices',
     method: 'POST',
@@ -62,7 +63,7 @@ const addAdvice = (data) => {
       Authorization: 'Token token=' + store.user.token},
     data: {
       'advice': {
-        'idea': 'Help a buddy out'
+        'idea': data.advice
       }
     }
   })
