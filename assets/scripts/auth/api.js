@@ -41,9 +41,20 @@ const signOut = (data) => {
   })
 }
 
+const showAdvice = () => {
+  console.log('at show advice')
+  return $.ajax({
+    url: config.apiOrigin + '/advices',
+    method: 'GET',
+    headers: {
+      Authorization: 'Token token=' + store.user.token}
+  })
+}
+
 module.exports = {
   signUp,
   signIn,
   changePassword,
-  signOut
+  signOut,
+  showAdvice
 }

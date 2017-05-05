@@ -52,6 +52,22 @@ const signOutFailure = () => {
   console.log('Something went wrong')
 }
 
+const adviceIndexFail = (response) => {
+  console.log('something went wrong')
+}
+
+const adviceIndexSucces = (response) => {
+  console.log('success')
+  console.log(response)
+  console.log(response.advices)
+  console.log(response.advices[0].idea)
+  const string1 = (response.advices[0].idea)
+  console.log(string1)
+  console.log(string1.to_s)
+  $('#display_advice').text('Hello ' + response.advices[0].idea + ' !')
+  // $('#display_advice').text('hellow')
+}
+
 module.exports = {
   signUpSuccess,
   signUpFailure,
@@ -60,5 +76,7 @@ module.exports = {
   changePasswordSuccess,
   changePasswordFailure,
   signOutSuccess,
-  signOutFailure
+  signOutFailure,
+  adviceIndexSucces,
+  adviceIndexFail
 }
