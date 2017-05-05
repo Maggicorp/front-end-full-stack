@@ -62,7 +62,23 @@ form {
   display: none;
 }
 
-.alter_advice {
+.add-advice {
+  display: none;
+}
+
+.edit_advice {
+  display: none;
+}
+
+.delete-advice {
+  display: none;
+}
+
+.delete-all {
+  display: none;
+}
+
+.add-default-advice {
   display: none;
 }
 

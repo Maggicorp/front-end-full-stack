@@ -18,7 +18,11 @@ const signInSuccess = (response) => {
   $('.sign-out').css('display', 'block')
   $('.change-password').css('display', 'block')
   $('.get_advice').css('display', 'block')
-  $('.alter_advice').css('display', 'block')
+  $('.add-advice').css('display', 'block')
+  $('.add-default-advice').css('display', 'block')
+  $('.delete-all').css('display', 'block')
+  $('.delete-advice').css('display', 'block')
+  $('.edit_advice').css('display', 'block')
   $('#sign-in').css('display', 'none')
   $('#sign-up').css('display', 'none')
 }
@@ -45,6 +49,12 @@ const signOutSuccess = () => {
   $('.alter_advice').css('display', 'none')
   $('.change-password').css('display', 'none')
   $('#sign-out').css('display', 'none')
+  $('.get_advice').css('display', 'none')
+  $('.add-advice').css('display', 'none')
+  $('.add-default-advice').css('display', 'none')
+  $('.delete-all').css('display', 'none')
+  $('.delete-advice').css('display', 'none')
+  $('.edit_advice').css('display', 'none')
   $('.clear-input').trigger('reset')
 }
 
@@ -58,7 +68,7 @@ const adviceIndexFail = (response) => {
 
 const adviceIndexSucces = (response) => {
   // console.log('success')
-  console.log("advice index repsonse", response)
+  console.log('advice index repsonse', response)
   store.advices = response.advices
   // console.log(response.advices[0].idea)
   // console.lgog(store.advices[0].idea)
