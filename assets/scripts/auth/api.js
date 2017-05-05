@@ -69,11 +69,28 @@ const addAdvice = (data) => {
   })
 }
 
+const addDefaultAdvice = (adviceString) => {
+  console.log(adviceString)
+  return $.ajax({
+    url: config.apiOrigin + '/advices',
+    method: 'POST',
+    controller: 'advices',
+    headers: {
+      Authorization: 'Token token=' + store.user.token},
+    data: {
+      'advice': {
+        'idea': adviceString
+      }
+    }
+  })
+}
+
 module.exports = {
   signUp,
   signIn,
   changePassword,
   signOut,
   showAdvice,
-  addAdvice
+  addAdvice,
+  addDefaultAdvice
 }

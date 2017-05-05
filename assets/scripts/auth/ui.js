@@ -67,7 +67,7 @@ const adviceIndexSucces = (response) => {
   const randNum = Math.floor(Math.random() * num)
   console.log(randNum)
   console.log(response.advices[randNum].idea)
-  $('#display_advice').text('Hello ' + response.advices[randNum].idea + ' !')
+  $('#display_advice').text('Hello, ' + response.advices[randNum].idea + ' !')
   // $('#display_advice').text('hellow')
 }
 
