@@ -59,12 +59,15 @@ const adviceIndexFail = (response) => {
 const adviceIndexSucces = (response) => {
   console.log('success')
   console.log(response)
-  console.log(response.advices)
+  store.advices = response.advices
   console.log(response.advices[0].idea)
-  const string1 = (response.advices[0].idea)
-  console.log(string1)
-  console.log(string1.to_s)
-  $('#display_advice').text('Hello ' + response.advices[0].idea + ' !')
+  console.log(store.advices[0].idea)
+  console.log(store.advices.length)
+  const num = store.advices.length
+  const randNum = Math.floor(Math.random() * num)
+  console.log(randNum)
+  console.log(response.advices[randNum].idea)
+  $('#display_advice').text('Hello ' + response.advices[randNum].idea + ' !')
   // $('#display_advice').text('hellow')
 }
 
