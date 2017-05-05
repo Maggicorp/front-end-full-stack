@@ -68,6 +68,15 @@ const adviceIndexSucces = (response) => {
   // $('#display_advice').text('hellow')
 }
 
+const adviceAddSuccess = (response) => {
+  console.log('success')
+  console.log(response)
+  console.log(response.advices)
+}
+const adviceAddFail = (response) => {
+  console.log('something went wrong')
+}
+
 module.exports = {
   signUpSuccess,
   signUpFailure,
@@ -78,5 +87,7 @@ module.exports = {
   signOutSuccess,
   signOutFailure,
   adviceIndexSucces,
-  adviceIndexFail
+  adviceIndexFail,
+  adviceAddSuccess,
+  adviceAddFail
 }

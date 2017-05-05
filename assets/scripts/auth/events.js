@@ -49,12 +49,23 @@ const onIndexAdvice = function (event) {
     .catch(ui.adviceIndexFail)
 }
 
+const onAddAdvice = function (event) {
+  event.preventDefault()
+  console.log('clicked button')
+  const data = getFormFields(this)
+  console.log(data)
+  api.addAdvice(data)
+    .then(ui.adviceAddSuccess)
+    .catch(ui.adviceAddFail)
+}
+
 const addHandlers = () => {
   $('#sign-up').on('submit', onSignUp)
   $('#sign-in').on('submit', onSignIn)
   $('#change-password').on('submit', onChangePassword)
   $('#sign-out').on('submit', onSignOut)
   $('.index-advice').on('submit', onIndexAdvice)
+  $('.add-advice').on('submit', onAddAdvice)
 }
 
 module.exports = {
