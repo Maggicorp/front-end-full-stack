@@ -61,17 +61,29 @@
             <legend> Get Advice </legend>
             <div id="display_advice" class="display_advice"> Advice is here </div>
             <input class="push btn" type="submit" name="submit" value="Get Advice">
-            <hr>
+          </fieldset>
+        </form>
+
+
+
+
+            <form id="edit_advice">
+              <fieldset>
             <input class="push btn" type="submit" name="submit" value="Edit this Advice">
        <br>
               <input type="text" name="advice" placeholder="Change advice here">
                     <input  class="push btn" type="submit" name="submit" value="Submit Changes">
        		<hr>
+        </fieldset>
+        </form>
+
+          <form id="delete-advice">
+            <fieldset>
             <input class="push btn delete" type="submit" name="submit" value="Delete This Advice">
           </fieldset>
         </form>
 
-        <form id="alter_advice" class="add-advice alter_advice">
+        <form id="add_advice" class="add-advice alter_advice">
           <fieldset>
             <legend> Add Advice </legend>
                <input type="text" name="advice" placeholder="Give yourself advice">
@@ -80,10 +92,15 @@
               </fieldset>
             </form>
 
-              <form>
+              <form id="delete_all_advice">
                 <fieldset>
             <input class="push delete btn" type="submit" name="submit" value="Delete All Advice">
-              <input class="push btn" type="submit" name="submit" value="Add Default Advice Library">
+          </fieldset>
+        </form>
+
+            <form id="add-default-advice" class="add-default-advice">
+              <fieldset>
+              <input class="push btn" type="submit" name="submit" value="Add Default Advice">
           </fieldset>
         </form>
 

@@ -69,7 +69,8 @@ const addAdvice = (data) => {
   })
 }
 
-const addDefaultAdvice = (adviceString) => {
+const addDefaultAdvice = () => {
+  const adviceString = 'get lots of sleep'
   console.log(adviceString)
   return $.ajax({
     url: config.apiOrigin + '/advices',

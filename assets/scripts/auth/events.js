@@ -59,6 +59,14 @@ const onAddAdvice = function (event) {
     .catch(ui.adviceAddFail)
 }
 
+const onAddDefaultAdvice = function () {
+  event.preventDefault()
+  console.log('clicked button')
+  api.addDefaultAdvice()
+    .then(ui.adviceAddSuccess)
+    .catch(ui.adviceAddFail)
+}
+
 const addHandlers = () => {
   $('#sign-up').on('submit', onSignUp)
   $('#sign-in').on('submit', onSignIn)
@@ -66,6 +74,7 @@ const addHandlers = () => {
   $('#sign-out').on('submit', onSignOut)
   $('.index-advice').on('submit', onIndexAdvice)
   $('.add-advice').on('submit', onAddAdvice)
+  $('.add-default-advice').on('submit', onAddDefaultAdvice)
 }
 
 module.exports = {
