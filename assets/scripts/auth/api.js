@@ -51,19 +51,18 @@ const showAdvice = () => {
   })
 }
 
-const addAdvice = () => {
+const addAdvice = (data) => {
   console.log('at show advice')
+  console.log(data)
   return $.ajax({
-    url: config.apiOrigin + '/advices/' + store.user.id,
+    url: config.apiOrigin + '/advices',
     method: 'POST',
+    controller: 'advices',
     headers: {
       Authorization: 'Token token=' + store.user.token},
     data: {
       'advice': {
-        'idea': 'Help a bubby out',
-        'user_id': '3',
-        'created_at': '2010-13-12',
-        'updated_at': '2010-22-12'
+        'idea': 'Help a buddy out'
       }
     }
   })
