@@ -53,7 +53,7 @@ const onAddAdvice = function (event) {
   event.preventDefault()
   console.log('clicked button')
   const data = getFormFields(this)
-  console.log(data)
+  console.log('this after get form fields', data)
   api.addAdvice(data)
     .then(ui.adviceAddSuccess)
     .catch(ui.adviceAddFail)
