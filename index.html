@@ -39,48 +39,6 @@
 
 
 
-        <form id="change-password" class="clear-input change-password">
-          <fieldset>
-            <legend> Change Password </legend>
-            <input type="password" name="passwords[old]" placeholder="old password"><br>
-            <input type="password" name="passwords[new]" placeholder="new password"><br>
-            <input class="push btn" type="submit" name="submit" value="Change Password">
-          </fieldset>
-        </form>
-
-        <form id="sign-out" class="sign-out">
-          <fieldset>
-            <legend> Sign Out </legend>
-            <input class="push btn" type="submit" name="submit" value="Sign Out">
-          </fieldset>
-        </form>
-
-
-        <form id="get_advice" class="clear-input get_advice index-advice">
-          <fieldset>
-            <legend> Get Advice </legend>
-            <div id="display_advice" class="display_advice"> Advice is here </div>
-            <input class="push btn" type="submit" name="submit" value="Get Advice">
-          </fieldset>
-        </form>
-
-            <form id="edit_advice" class="edit_advice">
-              <fieldset>
-            <input class="push btn" type="submit" name="submit" value="Edit this Advice">
-       <br>
-              <input type="text" name="advice[idea]" placeholder="Change advice here">
-                    <input  class="push btn" type="submit" name="submit" value="Submit Changes">
-       		<hr>
-        </fieldset>
-        </form>
-
-          <form id="delete-advice" class="delete-advice">
-            <fieldset>
-            <input type="number" name="advice[id]" placeholder="id number of advice to delete">
-            <input class="push btn delete" type="submit" name="submit" value="Delete This Advice">
-          </fieldset>
-        </form>
-
         <form id="add_advice" class="add-advice alter_advice">
           <fieldset>
             <legend> Add Advice </legend>
@@ -90,17 +48,63 @@
               </fieldset>
             </form>
 
-          <form id="delete_all_advice" class="delete-all">
-            <fieldset>
-            <input class="push delete btn" type="submit" name="submit" value="Delete All Advice">
+            <form id="add-default-advice" class="add-default-advice">
+                  <fieldset>
+                  <legend> Add Prewritten Advice </legend>
+                  <input class="push btn" type="submit" name="submit" value="Add Default Advice">
+              </fieldset>
+            </form>
+
+        <form id="get_advice" class="clear-input get_advice index-advice">
+          <fieldset>
+            <legend> Get Advice </legend>
+            <div id="display_advice" class="display_advice"> Advice is here </div>
+            <input class="push btn" type="submit" name="submit" value="Get Advice">
           </fieldset>
         </form>
 
-        <form id="add-default-advice" class="add-default-advice">
-              <fieldset>
-              <input class="push btn" type="submit" name="submit" value="Add Default Advice">
+        <form id="edit_advice" class="edit_advice">
+          <fieldset>
+                <legend> Edit Advice </legend>
+            <input type="number" name="advice[id]" placeholder="advice id number">
+            <input type="text" name="advice[idea]" placeholder="Change advice here">
+            <input  class="push btn" type="submit" name="submit" value="Submit Changes">
           </fieldset>
         </form>
+
+          <form id="delete-advice" class="delete-advice">
+            <fieldset>
+                  <legend> Delete some advice </legend>
+            <input type="number" name="advice[id]" placeholder="advice id number">
+            <input class="push btn delete" type="submit" name="submit" value="Delete This Advice">
+          </fieldset>
+        </form>
+
+
+                <form id="change-password" class="clear-input change-password">
+                  <fieldset>
+                    <legend> Change Password </legend>
+                    <input type="password" name="passwords[old]" placeholder="old password"><br>
+                    <input type="password" name="passwords[new]" placeholder="new password"><br>
+                    <input class="push btn" type="submit" name="submit" value="Change Password">
+                  </fieldset>
+                </form>
+
+                <form id="sign-out" class="sign-out">
+                  <fieldset>
+                    <legend> Sign Out </legend>
+                    <input class="push btn" type="submit" name="submit" value="Sign Out">
+                  </fieldset>
+                </form>
+
+
+          <!-- <form id="delete_all_advice" class="delete-all">
+            <fieldset>
+            <input class="push delete btn" type="submit" name="submit" value="Delete All Advice">
+          </fieldset>
+        </form> -->
+
+
 
       </main>
       <footer>MaggiCorp &copy;2017</footer>

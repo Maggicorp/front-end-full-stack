@@ -94,6 +94,19 @@ const deleteAdvice = (response) => {
   })
 }
 
+const editAdvice = (data) => {
+  console.log('edit advice data', data)
+  console.log(data)
+  return $.ajax({
+    url: config.apiOrigin + '/advices/' + data.advice.id,
+    method: 'PATCH',
+    controller: 'advices',
+    headers: {
+      Authorization: 'Token token=' + store.user.token},
+    data
+  })
+}
+
 module.exports = {
   signUp,
   signIn,
@@ -102,5 +115,6 @@ module.exports = {
   showAdvice,
   addAdvice,
   addDefaultAdvice,
-  deleteAdvice
+  deleteAdvice,
+  editAdvice
 }

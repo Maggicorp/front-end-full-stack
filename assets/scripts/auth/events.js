@@ -77,6 +77,16 @@ const onDeleteAdvice = function (event) {
     .catch(ui.adviceDeleteFail)
 }
 
+const onEditAdvice = function (event) {
+  event.preventDefault()
+  console.log('clicked button')
+  const data = getFormFields(this)
+  console.log('this after get form fields', data)
+  api.editAdvice(data)
+    .then(ui.adviceEditSuccess)
+    .catch(ui.adviceEditFail)
+}
+
 const addHandlers = () => {
   $('#sign-up').on('submit', onSignUp)
   $('#sign-in').on('submit', onSignIn)
@@ -86,6 +96,7 @@ const addHandlers = () => {
   $('.add-advice').on('submit', onAddAdvice)
   $('.add-default-advice').on('submit', onAddDefaultAdvice)
   $('.delete-advice').on('submit', onDeleteAdvice)
+  $('.edit_advice').on('submit', onEditAdvice)
 }
 
 module.exports = {
