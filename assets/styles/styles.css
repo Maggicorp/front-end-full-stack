@@ -21,6 +21,7 @@ body {
 	font-family: 'Shadows Into Light', cursive;
 	text-shadow: 1px 1px 5px lightgray;
   background-color: #8ECAF9;
+  min-height: 800px
 }
 h2 {
 	font-size: 160%;
