@@ -18,6 +18,8 @@
       <header><h1>You give the best advice</h1></header>
       <main>
 
+        <div class="error-message" id="sign-up-error"> </div>
+
         <form id="sign-up" class="clear-input">
           <fieldset>
             <legend> Sign up </legend>
@@ -28,6 +30,8 @@
           </fieldset>
         </form>
 
+        <div class="error-message" id="sign-in-error"> </div>
+
         <form id="sign-in" class="clear-input">
           <fieldset>
             <legend> Sign in </legend>
@@ -37,9 +41,20 @@
           </fieldset>
         </form>
 
+        <div class="error-message" id="get-advice-error"> </div>
 
+        <form id="get_advice" class="clear-input get_advice index-advice">
+          <fieldset>
+            <legend> Get Advice </legend>
+            <div id="display_advice" class="display_advice"> Click below to get some advice </div>
+            <input class="push btn" type="submit" name="submit" value="Get Advice">
+          </fieldset>
+        </form>
 
-        <form id="add_advice" class="add-advice alter_advice">
+        <div class="error-message" id="add-advice-error"> </div>
+        <div class="success-message" id="add-advice-success"> </div>
+
+        <form id="add_advice" class="add-advice alter_advice clear-input">
           <fieldset>
             <legend> Add Advice </legend>
                <input type="text" name="advice[idea]" placeholder="Give yourself advice">
@@ -48,22 +63,20 @@
               </fieldset>
             </form>
 
-            <form id="add-default-advice" class="add-default-advice">
-                  <fieldset>
+          <div class="success-message" id="add-default-advice-success"> </div>
+
+          <form id="add-default-advice" class="add-default-advice clear-input">
+                <fieldset>
                   <legend> Add Prewritten Advice </legend>
-                  <input class="push btn" type="submit" name="submit" value="Add Default Advice">
-              </fieldset>
+                    <input class="push btn" type="submit" name="submit" value="Add Default Advice">
+                  </fieldset>
             </form>
 
-        <form id="get_advice" class="clear-input get_advice index-advice">
-          <fieldset>
-            <legend> Get Advice </legend>
-            <div id="display_advice" class="display_advice"> Advice is here </div>
-            <input class="push btn" type="submit" name="submit" value="Get Advice">
-          </fieldset>
-        </form>
 
-        <form id="edit_advice" class="edit_advice">
+        <div class="error-message" id="edit-advice-error"></div>
+        <div class="success-message" id="edit-advice-success"></div>
+
+        <form id="edit_advice" class="edit_advice clear-input">
           <fieldset>
                 <legend> Edit Advice </legend>
             <input type="number" name="advice[id]" placeholder="advice id number">
@@ -72,7 +85,10 @@
           </fieldset>
         </form>
 
-          <form id="delete-advice" class="delete-advice">
+        <div class="error-message" id="delete-advice-error"> </div>
+        <div class="success-message" id="delete-advice-success"></div>
+
+          <form id="delete-advice" class="delete-advice clear-input">
             <fieldset>
                   <legend> Delete some advice </legend>
             <input type="number" name="advice[id]" placeholder="advice id number">
@@ -80,6 +96,8 @@
           </fieldset>
         </form>
 
+        <div class="error-message" id="change-password-error"> </div>
+        <div class="success-message" id="change-password-success"> </div>
 
                 <form id="change-password" class="clear-input change-password">
                   <fieldset>

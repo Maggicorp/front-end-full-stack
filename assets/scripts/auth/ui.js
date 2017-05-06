@@ -5,11 +5,13 @@ const store = require('../store.js')
 const signUpSuccess = (data) => {
   console.log('reached sign up suceess')
   $('#sign-up').css('display', 'none')
+  $('#sign-up-error').text('')
 }
 
 const signUpFailure = () => {
   console.log('reached sign up failure')
   console.log('user name already in use')
+  $('#sign-up-error').text("error: user name taken or passwords don't match")
 }
 
 const signInSuccess = (response) => {
@@ -25,18 +27,26 @@ const signInSuccess = (response) => {
   $('.edit_advice').css('display', 'block')
   $('#sign-in').css('display', 'none')
   $('#sign-up').css('display', 'none')
+  $('#sign-up-error').text('')
+  $('#sign-in-error').text('')
 }
 
 const signInFailure = () => {
   console.log('something went wrong')
+  $('#sign-in-error').text("error: incorrect password or passwords don't match")
 }
 //
 const changePasswordSuccess = (response) => {
   console.log('password changed')
+  $('#change-password-success').text('success! password was changed')
+  $('#change-password-error').text('')
+  $('.change-password').trigger('reset')
 }
 
 const changePasswordFailure = () => {
   console.log('something went wrong, password not changed')
+  $('#change-password-error').text('error: password not changed')
+  $('#change-password-success').text('')
 }
 
 const signOutSuccess = () => {
@@ -56,6 +66,8 @@ const signOutSuccess = () => {
   $('.delete-advice').css('display', 'none')
   $('.edit_advice').css('display', 'none')
   $('.clear-input').trigger('reset')
+  $('.error-message').text('')
+  $('.success-message').text('')
 }
 
 const signOutFailure = () => {
@@ -64,6 +76,7 @@ const signOutFailure = () => {
 
 const adviceIndexFail = (response) => {
   console.log('something went wrong')
+  $('#display_advice').text('No advice to show, add some advice')
 }
 
 const adviceIndexSucces = (response) => {
@@ -84,25 +97,48 @@ const adviceAddSuccess = (response) => {
   console.log('success')
   console.log(response)
   console.log(response.advices)
+  $('.add-advice').trigger('reset')
+  $('#add-advice-success').text('advice added')
+  $('#add-advice-error').text('')
 }
+
+const adviceAddDefaultSuccess = (response) => {
+  console.log('success')
+  console.log(response)
+  console.log(response.advices)
+  $('#add-default-advice-success').text('advice added')
+}
+
 const adviceAddFail = (response) => {
   console.log('something went wrong')
+  $('#add-advice-error').text('error: please input advice')
+  $('#add-advice-success').text('')
 }
 
 const adviceDeleteSuccess = () => {
   console.log('success')
+  $('.delete-advice').trigger('reset')
+  $('#delete-advice-error').text('')
+  $('#delete-advice-success').text('advice deleted')
 }
 const adviceDeleteFail = () => {
   console.log('something went wrong')
+  $('#delete-advice-error').text('please enter valid advice id number')
+  $('#delete-advice-success').text('')
 }
 
 const adviceEditSuccess = (response) => {
   console.log('success')
+  $('.edit_advice').trigger('reset')
   console.log(response)
   console.log(response.advices)
+  $('#edit-advice-error').text('')
+  $('#edit-advice-success').text('advice edited')
 }
 const adviceEditFail = (response) => {
   console.log('something went wrong')
+  $('#edit-advice-error').text('please enter valid advice id number')
+  $('#edit-advice-success').text('')
 }
 
 module.exports = {
@@ -121,5 +157,6 @@ module.exports = {
   adviceDeleteSuccess,
   adviceDeleteFail,
   adviceEditSuccess,
-  adviceEditFail
+  adviceEditFail,
+  adviceAddDefaultSuccess
 }

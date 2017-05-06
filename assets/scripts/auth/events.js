@@ -63,7 +63,7 @@ const onAddDefaultAdvice = function () {
   event.preventDefault()
   console.log('clicked button')
   api.addDefaultAdvice()
-    .then(ui.adviceAddSuccess)
+    .then(ui.adviceAddDefaultSuccess)
     .catch(ui.adviceAddFail)
 }
 
