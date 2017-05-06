@@ -89,6 +89,13 @@ const adviceAddFail = (response) => {
   console.log('something went wrong')
 }
 
+const adviceDeleteSuccess = () => {
+  console.log('success')
+}
+const adviceDeleteFail = () => {
+  console.log('something went wrong')
+}
+
 module.exports = {
   signUpSuccess,
   signUpFailure,
@@ -101,5 +108,7 @@ module.exports = {
   adviceIndexSucces,
   adviceIndexFail,
   adviceAddSuccess,
-  adviceAddFail
+  adviceAddFail,
+  adviceDeleteSuccess,
+  adviceDeleteFail
 }
