@@ -29,6 +29,7 @@ const signInSuccess = (response) => {
   $('#sign-up').css('display', 'none')
   $('#sign-up-error').text('')
   $('#sign-in-error').text('')
+  $('#display_advice').text('take your own advice')
 }
 
 const signInFailure = () => {
@@ -68,6 +69,7 @@ const signOutSuccess = () => {
   $('.clear-input').trigger('reset')
   $('.error-message').text('')
   $('.success-message').text('')
+  $('#display_advice').text('take your own advice')
 }
 
 const signOutFailure = () => {
