@@ -72,10 +72,9 @@ const addAdvice = (data) => {
 const defaultAdviceArray = ['Take a nap', 'Drink more coffee', 'Drink less coffee', 'Call your mom', 'Call your dad', 'Eat some candy', 'Go for a walk', 'Do some push ups', 'Drink some water', 'Do not spend more than you earn', 'Text a friend', 'Clean your room', 'Pet a dog', 'Turn off your phone', 'Wiggle your toes', 'Listen to music you like', 'Read a book']
 
 const addDefaultAdvice = () => {
-  const num = defaultAdviceArray.length
-  const randNum = Math.floor(Math.random() * num)
+  const arrayLength = defaultAdviceArray.length
+  const randNum = Math.floor(Math.random() * arrayLength)
   const adviceString = defaultAdviceArray[randNum]
-  'get lots of sleep'
   console.log(adviceString)
   return $.ajax({
     url: config.apiOrigin + '/advices',

@@ -91,6 +91,7 @@ const adviceIndexSucces = (response) => {
   const num = store.advices.length
   const randNum = Math.floor(Math.random() * num)
   store.currentNum = randNum
+  console.log(store.currentNum)
   $('#display_advice').text(store.advices[randNum].idea + '! (id: ' + store.advices[randNum].id + ')')
 }
 

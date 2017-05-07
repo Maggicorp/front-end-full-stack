@@ -109,6 +109,7 @@ const onDeleteAllAdvice = function () {
 const onTakeAdviceNo = function () {
   event.preventDefault()
   console.log('cliked do not take advice')
+  console.log(store.currentNum)
   if (store.currentNum) {
     api.takeNoAdvice()
       .then(ui.takeNoAdviceSuccess)
@@ -122,6 +123,7 @@ const onTakeAdviceNo = function () {
 const onTakeAdviceYes = function () {
   event.preventDefault()
   console.log('cliked yes take advice')
+  console.log(store.currentNum)
   if (store.currentNum) {
     api.takeYesAdvice()
       .then(ui.takeYesAdviceSuccess)
