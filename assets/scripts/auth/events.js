@@ -110,7 +110,7 @@ const onTakeAdviceNo = function () {
   event.preventDefault()
   console.log('cliked do not take advice')
   console.log(store.currentNum)
-  if (store.currentNum) {
+  if (store.currentNum >= 0 && store.advices[store.currentNum] !== undefined) {
     api.takeNoAdvice()
       .then(ui.takeNoAdviceSuccess)
       .catch(ui.takeNoAdviceFail)
@@ -124,7 +124,7 @@ const onTakeAdviceYes = function () {
   event.preventDefault()
   console.log('cliked yes take advice')
   console.log(store.currentNum)
-  if (store.currentNum) {
+  if (store.currentNum >= 0 && store.advices[store.currentNum] !== undefined) {
     api.takeYesAdvice()
       .then(ui.takeYesAdviceSuccess)
       .catch(ui.takeYesAdviceFail)

@@ -135,7 +135,7 @@ const deleteAllAdvice = (num) => {
 
 const takeNoAdvice = () => {
   console.log('take no advice api')
-  console.log(store.advices[store.currentNum].id)
+  // console.log(store.advices[store.currentNum].id)
   return $.ajax({
     url: config.apiOrigin + '/take_advices',
     method: 'POST',
@@ -154,7 +154,7 @@ const takeNoAdvice = () => {
 
 const takeYesAdvice = () => {
   console.log('take yes advice api')
-  console.log(store.advices[store.currentNum].id)
+  // console.log(store.advices[store.currentNum].id)
   return $.ajax({
     url: config.apiOrigin + '/take_advices',
     method: 'POST',

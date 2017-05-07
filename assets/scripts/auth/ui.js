@@ -31,7 +31,7 @@ const signInSuccess = (response) => {
   $('#sign-in-error').text('')
   $('#display_advice').text('take your own advice')
   store.advices = null
-  store.currentNum = null
+  store.currentNum = -1
 }
 
 const signInFailure = () => {
@@ -80,11 +80,12 @@ const signOutFailure = () => {
 const adviceIndexFail = (response) => {
   console.log('something went wrong on getting advice index')
   $('#display_advice').text('No advice to show, add some advice')
+  store.currentNum = -1
 }
 
 // gets array of all the users' advice and then shows one peices of advice
 const adviceIndexSucces = (response) => {
-  console.log('advice index repsonse', response)
+  console.log('advice index success repsonse', response)
   $('.error-message').text('')
   $('.success-message').text('')
   store.advices = response.advices
@@ -136,11 +137,13 @@ const adviceDeleteSuccess = () => {
   $('.delete-advice').trigger('reset')
   $('#delete-advice-error').text('')
   $('#delete-advice-success').text('advice deleted')
+  store.currentNum = -1
 }
 const adviceDeleteFail = () => {
   console.log('something went wrong')
   $('#delete-advice-error').text('please enter valid advice id number')
   $('#delete-advice-success').text('')
+  store.currentNum = -1
 }
 
 const adviceEditSuccess = (response) => {
