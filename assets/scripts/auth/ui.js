@@ -30,6 +30,7 @@ const signInSuccess = (response) => {
   $('#sign-up-error').text('')
   $('#sign-in-error').text('')
   $('#display_advice').text('take your own advice')
+  store.advices = null
 }
 
 const signInFailure = () => {
@@ -53,7 +54,6 @@ const changePasswordFailure = () => {
 const signOutSuccess = () => {
   console.log('sign out successful')
   store.user = null
-  // store.games = null
   $('#sign-in').css('display', 'block')
   $('#sign-up').css('display', 'block')
   $('.get_advice').css('display', 'none')
@@ -87,7 +87,8 @@ const adviceIndexSucces = (response) => {
   store.advices = response.advices
   const num = store.advices.length
   const randNum = Math.floor(Math.random() * num)
-  $('#display_advice').text('Hello, ' + response.advices[randNum].idea + ' ! (id: ' + response.advices[randNum].id + ')')
+  store.currentNum = randNum
+  $('#display_advice').text('Hello, ' + store.advices[randNum].idea + ' ! (id: ' + store.advices[randNum].id + ')')
 }
 
 let added
@@ -167,6 +168,13 @@ const adviceDeleteAllFail = (response) => {
   $('#delete-all-success').text('')
 }
 
+const takeNoAdviceSuccess = (response) => {
+  console.log('success on take no advice')
+}
+const takeNoAdviceFail = (response) => {
+  console.log('fail on take no advice')
+}
+
 module.exports = {
   signUpSuccess,
   signUpFailure,
@@ -186,5 +194,7 @@ module.exports = {
   adviceEditFail,
   adviceAddDefaultSuccess,
   adviceDeleteAllSuccess,
-  adviceDeleteAllFail
+  adviceDeleteAllFail,
+  takeNoAdviceFail,
+  takeNoAdviceSuccess
 }

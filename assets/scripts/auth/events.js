@@ -106,6 +106,14 @@ const onDeleteAllAdvice = function () {
     .catch(ui.adviceDeleteAllFail)
 }
 
+const onTakeAdviceNo = function () {
+  event.preventDefault()
+  console.log('cliked do not take advice')
+  api.takeNoAdvice()
+    .then(ui.takeNoAdviceSuccess)
+    .catch(ui.takeNoAdviceFail)
+}
+
 const addHandlers = () => {
   $('#sign-up').on('submit', onSignUp)
   $('#sign-in').on('submit', onSignIn)
@@ -117,6 +125,7 @@ const addHandlers = () => {
   $('.delete-advice').on('submit', onDeleteAdvice)
   $('.edit_advice').on('submit', onEditAdvice)
   $('.delete-all').on('submit', onDeleteAllAdvice)
+  $('#take_advice_no').on('click', onTakeAdviceNo)
 }
 
 module.exports = {

@@ -134,6 +134,25 @@ const deleteAllAdvice = (num) => {
   })
 }
 
+const takeNoAdvice = () => {
+  console.log('take no advice api')
+  console.log(store.advices[store.currentNum].id)
+  return $.ajax({
+    url: config.apiOrigin + '/take_advices',
+    method: 'POST',
+    controller: 'advices',
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    },
+    data: {
+      'take_advice': {
+        'yes_or_no': 0,
+        'advice_id': store.advices[store.currentNum].id
+      }
+    }
+  })
+}
+
 module.exports = {
   signUp,
   signIn,
@@ -144,5 +163,6 @@ module.exports = {
   addDefaultAdvice,
   deleteAdvice,
   editAdvice,
-  deleteAllAdvice
+  deleteAllAdvice,
+  takeNoAdvice
 }
