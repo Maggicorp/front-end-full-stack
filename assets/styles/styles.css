@@ -117,8 +117,28 @@ form {
 
 .delete:hover {
   background:#7B0002;
-
 }
+
+@keyframes flash {
+   0%, 50%, 100% {
+      opacity: 1;
+   }
+   25%, 75% {
+      opacity: 0;
+   }
+}
+
+.success-message {
+  text-shadow: 1px 1px 6px white;
+  font-size: 16px;
+}
+
+.error-message {
+  text-shadow: 1px 1px 6px red;
+  font-size: 16px;
+  color: black;
+}
+
 input {
 	  border-radius: 15px;
 	  font-size: 80%;

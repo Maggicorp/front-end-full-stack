@@ -81,26 +81,29 @@ const adviceIndexFail = (response) => {
   $('#display_advice').text('No advice to show, add some advice')
 }
 
+// gets array of all the users' advice and then shows one peices of advice
 const adviceIndexSucces = (response) => {
-  // console.log('success')
   console.log('advice index repsonse', response)
   store.advices = response.advices
-  // console.log(response.advices[0].idea)
-  // console.lgog(store.advices[0].idea)
-  // console.log(store.advices.length)
   const num = store.advices.length
   const randNum = Math.floor(Math.random() * num)
-  // console.log(randNum)
-  // console.log(response.advices[randNum].idea)
   $('#display_advice').text('Hello, ' + response.advices[randNum].idea + ' ! (id: ' + response.advices[randNum].id + ')')
 }
+
+let added
 
 const adviceAddSuccess = (response) => {
   console.log('success')
   console.log(response)
   console.log(response.advices)
   $('.add-advice').trigger('reset')
-  $('#add-advice-success').text('advice added')
+  if (added !== false) {
+    $('#add-advice-success').text('poignant advice added')
+    added = !added
+  } else {
+    $('#add-advice-success').text('clever advice added')
+    added = !added
+  }
   $('#add-advice-error').text('')
 }
 
@@ -108,7 +111,13 @@ const adviceAddDefaultSuccess = (response) => {
   console.log('success')
   console.log(response)
   console.log(response.advices)
-  $('#add-default-advice-success').text('advice added')
+  if (added === true) {
+    $('#add-default-advice-success').text('brilliant advice added')
+    added = !added
+  } else {
+    $('#add-default-advice-success').text('excellent advice added')
+    added = !added
+  }
 }
 
 const adviceAddFail = (response) => {
