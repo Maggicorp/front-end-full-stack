@@ -31,6 +31,7 @@ const signInSuccess = (response) => {
   $('#sign-in-error').text('')
   $('#display_advice').text('take your own advice')
   store.advices = null
+  store.currentNum = null
 }
 
 const signInFailure = () => {
@@ -84,11 +85,13 @@ const adviceIndexFail = (response) => {
 // gets array of all the users' advice and then shows one peices of advice
 const adviceIndexSucces = (response) => {
   console.log('advice index repsonse', response)
+  $('.error-message').text('')
+  $('.success-message').text('')
   store.advices = response.advices
   const num = store.advices.length
   const randNum = Math.floor(Math.random() * num)
   store.currentNum = randNum
-  $('#display_advice').text('Hello, ' + store.advices[randNum].idea + ' ! (id: ' + store.advices[randNum].id + ')')
+  $('#display_advice').text(store.advices[randNum].idea + '! (id: ' + store.advices[randNum].id + ')')
 }
 
 let added
@@ -169,10 +172,29 @@ const adviceDeleteAllFail = (response) => {
 }
 
 const takeNoAdviceSuccess = (response) => {
+  console.log(response)
   console.log('success on take no advice')
+  $('#take-advice-error').text('')
+  $('#take-advice-success').text('response successfully recorded')
 }
 const takeNoAdviceFail = (response) => {
+  console.log(response)
   console.log('fail on take no advice')
+  $('#take-advice-error').text('You must get advice before you can take it')
+  $('#take-advice-success').text('')
+}
+
+const takeYesAdviceSuccess = (response) => {
+  console.log(response)
+  console.log('success on take Yes advice')
+  $('#take-advice-error').text('')
+  $('#take-advice-success').text('response successfully recorded')
+}
+const takeYesAdviceFail = (response) => {
+  console.log(response)
+  console.log('fail on take yes advice')
+  $('#take-advice-error').text('You must get advice before you can take it')
+  $('#take-advice-success').text('')
 }
 
 module.exports = {
@@ -196,5 +218,7 @@ module.exports = {
   adviceDeleteAllSuccess,
   adviceDeleteAllFail,
   takeNoAdviceFail,
-  takeNoAdviceSuccess
+  takeNoAdviceSuccess,
+  takeYesAdviceSuccess,
+  takeYesAdviceFail
 }

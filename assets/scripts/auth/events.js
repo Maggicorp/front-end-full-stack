@@ -109,9 +109,27 @@ const onDeleteAllAdvice = function () {
 const onTakeAdviceNo = function () {
   event.preventDefault()
   console.log('cliked do not take advice')
-  api.takeNoAdvice()
-    .then(ui.takeNoAdviceSuccess)
-    .catch(ui.takeNoAdviceFail)
+  if (store.currentNum) {
+    api.takeNoAdvice()
+      .then(ui.takeNoAdviceSuccess)
+      .catch(ui.takeNoAdviceFail)
+  } else {
+    console.log('must you must select advice to take it')
+    $('#take-advice-error').text('You must get advice before you can take it')
+  }
+}
+
+const onTakeAdviceYes = function () {
+  event.preventDefault()
+  console.log('cliked yes take advice')
+  if (store.currentNum) {
+    api.takeYesAdvice()
+      .then(ui.takeYesAdviceSuccess)
+      .catch(ui.takeYesAdviceFail)
+  } else {
+    console.log('must you must select advice to take it')
+    $('#take-advice-error').text('You must get advice before you can take it')
+  }
 }
 
 const addHandlers = () => {
@@ -126,6 +144,7 @@ const addHandlers = () => {
   $('.edit_advice').on('submit', onEditAdvice)
   $('.delete-all').on('submit', onDeleteAllAdvice)
   $('#take_advice_no').on('click', onTakeAdviceNo)
+  $('#take_advice_yes').on('click', onTakeAdviceYes)
 }
 
 module.exports = {
