@@ -26,7 +26,8 @@ const changePassword = (data) => {
     url: config.apiOrigin + '/change-password/' + store.user.id,
     method: 'PATCH',
     headers: {
-      Authorization: 'Token token=' + store.user.token},
+      Authorization: 'Token token=' + store.user.token
+    },
     data
   })
 }
@@ -36,7 +37,8 @@ const signOut = (data) => {
     url: config.apiOrigin + '/sign-out/' + store.user.id,
     method: 'DELETE',
     headers: {
-      Authorization: 'Token token=' + store.user.token},
+      Authorization: 'Token token=' + store.user.token
+    },
     data
   })
 }
@@ -47,7 +49,8 @@ const showAdvice = () => {
     url: config.apiOrigin + '/advices',
     method: 'GET',
     headers: {
-      Authorization: 'Token token=' + store.user.token}
+      Authorization: 'Token token=' + store.user.token
+    }
   })
 }
 
@@ -60,12 +63,13 @@ const addAdvice = (data) => {
     method: 'POST',
     controller: 'advices',
     headers: {
-      Authorization: 'Token token=' + store.user.token},
+      Authorization: 'Token token=' + store.user.token
+    },
     data
   })
 }
 
-const defaultAdviceArray = ['Take a nap', 'Drink more coffee', 'Drink less coffee', 'Call your mom', 'Call your dad', 'Eat some candy', 'Go for a walk', 'Do some push ups', 'Drink some water', 'Do not spend more than you earn', 'Text a friend', 'Clean your room']
+const defaultAdviceArray = ['Take a nap', 'Drink more coffee', 'Drink less coffee', 'Call your mom', 'Call your dad', 'Eat some candy', 'Go for a walk', 'Do some push ups', 'Drink some water', 'Do not spend more than you earn', 'Text a friend', 'Clean your room', 'Pet a dog', 'Turn off your phone', 'Wiggle your toes', 'Listen to music you like', 'Read a book']
 
 const addDefaultAdvice = () => {
   const num = defaultAdviceArray.length
@@ -78,7 +82,8 @@ const addDefaultAdvice = () => {
     method: 'POST',
     controller: 'advices',
     headers: {
-      Authorization: 'Token token=' + store.user.token},
+      Authorization: 'Token token=' + store.user.token
+    },
     data: {
       'advice': {
         'idea': adviceString
@@ -94,7 +99,8 @@ const deleteAdvice = (response) => {
     url: config.apiOrigin + '/advices/' + response.advice.id,
     method: 'DELETE',
     headers: {
-      Authorization: 'Token token=' + store.user.token},
+      Authorization: 'Token token=' + store.user.token
+    },
     data: {}
   })
 }
@@ -107,8 +113,24 @@ const editAdvice = (data) => {
     method: 'PATCH',
     controller: 'advices',
     headers: {
-      Authorization: 'Token token=' + store.user.token},
+      Authorization: 'Token token=' + store.user.token
+    },
     data
+  })
+}
+
+const deleteAllAdvice = (num) => {
+  console.log('at delete advice')
+  console.log(num)
+  // console.log(store.advices[0].id)
+  // for (let i = 0; i < store.advices.length; i++) {
+  return $.ajax({
+    url: config.apiOrigin + '/advices/' + num,
+    method: 'DELETE',
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    },
+    data: {}
   })
 }
 
@@ -121,5 +143,6 @@ module.exports = {
   addAdvice,
   addDefaultAdvice,
   deleteAdvice,
-  editAdvice
+  editAdvice,
+  deleteAllAdvice
 }

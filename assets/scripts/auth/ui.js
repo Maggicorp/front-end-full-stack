@@ -77,7 +77,7 @@ const signOutFailure = () => {
 }
 
 const adviceIndexFail = (response) => {
-  console.log('something went wrong')
+  console.log('something went wrong on getting advice index')
   $('#display_advice').text('No advice to show, add some advice')
 }
 
@@ -152,6 +152,21 @@ const adviceEditFail = (response) => {
   $('#edit-advice-success').text('')
 }
 
+const adviceDeleteAllSuccess =
+(response) => {
+  console.log('success on delete all')
+  console.log(response)
+  $('#delete-all-error').text('')
+  $('#delete-all-success').text('all advice was deleted')
+  $('#display_advice').text('all advice deleted, add new advice')
+}
+
+const adviceDeleteAllFail = (response) => {
+  console.log('something went wrong deleting it all ')
+  $('#delete-all-error').text('no advice to delete')
+  $('#delete-all-success').text('')
+}
+
 module.exports = {
   signUpSuccess,
   signUpFailure,
@@ -169,5 +184,7 @@ module.exports = {
   adviceDeleteFail,
   adviceEditSuccess,
   adviceEditFail,
-  adviceAddDefaultSuccess
+  adviceAddDefaultSuccess,
+  adviceDeleteAllSuccess,
+  adviceDeleteAllFail
 }

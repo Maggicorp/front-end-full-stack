@@ -1,7 +1,7 @@
 'use strict'
 
 const getFormFields = require(`../../../lib/get-form-fields`)
-
+const store = require('../store.js')
 const api = require('./api')
 const ui = require('./ui')
 
@@ -18,19 +18,6 @@ const onSignUp = function (event) {
     })
     .catch(ui.signUpFailure)
 }
-
-// const onSignUp = function (event) {
-//   const data = getFormFields(this)
-//   event.preventDefault()
-//   api.signUp(data)
-//     .then(ui.signUpSuccess)
-//     .then(() => {
-//       api.signInAuto(data)
-//         .then(ui.autoSignInSuccess)
-//         .catch(ui.autoSignInFailure)
-//     })
-//     .catch(ui.signUpFailure)
-// }
 
 const onSignIn = function (event) {
   event.preventDefault()
@@ -105,6 +92,20 @@ const onEditAdvice = function (event) {
     .catch(ui.adviceEditFail)
 }
 
+const onDeleteAllAdvice = function () {
+  event.preventDefault()
+  api.showAdvice()
+    .then(ui.adviceIndexSucces)
+    .then(() => {
+      for (let i = 0; i < store.advices.length; i++) {
+        api.deleteAllAdvice(store.advices[i].id)
+          .then(ui.adviceDeleteAllSuccess)
+          .catch(ui.adviceDeleteAllFail)
+      }
+    })
+    .catch(ui.adviceDeleteAllFail)
+}
+
 const addHandlers = () => {
   $('#sign-up').on('submit', onSignUp)
   $('#sign-in').on('submit', onSignIn)
@@ -115,6 +116,7 @@ const addHandlers = () => {
   $('.add-default-advice').on('submit', onAddDefaultAdvice)
   $('.delete-advice').on('submit', onDeleteAdvice)
   $('.edit_advice').on('submit', onEditAdvice)
+  $('.delete-all').on('submit', onDeleteAllAdvice)
 }
 
 module.exports = {
