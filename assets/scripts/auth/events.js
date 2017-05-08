@@ -46,6 +46,8 @@ const onSignOut = function (event) {
 
 const onIndexAdvice = function (event) {
   event.preventDefault()
+  $('.error-message').text('')
+  $('.success-message').text('')
   console.log('clicked button')
   const data = getFormFields(this)
   console.log(data)
@@ -114,6 +116,11 @@ const onTakeAdviceNo = function () {
     console.log('advice is ', store.advices[store.currentNum])
     api.takeNoAdvice()
       .then(ui.takeNoAdviceSuccess)
+      .then(() => {
+        api.showAdvice()
+          .then(ui.adviceIndexSucces)
+          .catch(ui.adviceIndexFail)
+      })
       .catch(ui.takeNoAdviceFail)
   } else {
     console.log('must you must select advice to take it')
@@ -129,6 +136,11 @@ const onTakeAdviceYes = function () {
     console.log('advice is ', store.advices[store.currentNum])
     api.takeYesAdvice()
       .then(ui.takeYesAdviceSuccess)
+      .then(() => {
+        api.showAdvice()
+          .then(ui.adviceIndexSucces)
+          .catch(ui.adviceIndexFail)
+      })
       .catch(ui.takeYesAdviceFail)
   } else {
     console.log('must you must select advice to take it')

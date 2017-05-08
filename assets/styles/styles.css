@@ -75,6 +75,10 @@ form {
   display: none;
 }
 
+.take-advice-data {
+  display: none;
+}
+
 .delete-all {
   display: none;
 }

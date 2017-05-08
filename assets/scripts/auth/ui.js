@@ -30,6 +30,7 @@ const signInSuccess = (response) => {
   $('#sign-up-error').text('')
   $('#sign-in-error').text('')
   $('#display_advice').text('take your own advice')
+  $('#get-take-advice-data').css('display', 'block')
   store.advices = null
   store.currentNum = -1
 }
@@ -71,6 +72,7 @@ const signOutSuccess = () => {
   $('.error-message').text('')
   $('.success-message').text('')
   $('#display_advice').text('take your own advice')
+  $('#get-take-advice-data').css('display', 'none')
 }
 
 const signOutFailure = () => {
@@ -86,8 +88,8 @@ const adviceIndexFail = (response) => {
 // gets array of all the users' advice and then shows one pieces of advice
 const adviceIndexSucces = (response) => {
   console.log('advice index success repsonse', response)
-  $('.error-message').text('')
-  $('.success-message').text('')
+  // $('.error-message').text('')
+  // $('.success-message').text('')
   store.advices = response.advices
   const num = store.advices.length
   const randNum = Math.floor(Math.random() * num)
