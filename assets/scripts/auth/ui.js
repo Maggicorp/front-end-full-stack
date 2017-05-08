@@ -38,7 +38,7 @@ const signInFailure = () => {
   console.log('something went wrong')
   $('#sign-in-error').text("error: incorrect password or passwords don't match")
 }
-//
+
 const changePasswordSuccess = (response) => {
   console.log('password changed')
   $('#change-password-success').text('success! password was changed')
@@ -83,7 +83,7 @@ const adviceIndexFail = (response) => {
   store.currentNum = -1
 }
 
-// gets array of all the users' advice and then shows one peices of advice
+// gets array of all the users' advice and then shows one pieces of advice
 const adviceIndexSucces = (response) => {
   console.log('advice index success repsonse', response)
   $('.error-message').text('')
@@ -202,17 +202,24 @@ const takeYesAdviceFail = (response) => {
 }
 
 const takeAdviceDataSucces = (response) => {
-  console.log('response.take_advices', response.take_advices)
-  console.log('response.take_advices[0]', response.take_advices[0])
-  console.log('response.take_advices[0].yes_or_no', response.take_advices[0].yes_or_no)
+  console.log('response.take_advices.yes_or_no', response.take_advices.yes_or_no)
+  const YesNoArray = []
+  const takeAdvicesArray = response.take_advices
+  for (let i = 0; i < takeAdvicesArray.length; i++) {
+    YesNoArray.push(takeAdvicesArray[i].yes_or_no)
+  }
+  console.log(YesNoArray)
+  const totalYes = YesNoArray.reduce((prev, curr) => prev + curr)
+  const percent = (100 * totalYes / takeAdvicesArray.length).toFixed(2)
+  console.log('reduce YesNoArray', YesNoArray)
   console.log('success on take advice display')
-  $('#display-take-advice-data').text('success, the first adivce you did take? - ' + response.take_advices[0].yes_or_no + ' - is no. You took your own advice ' + response.take_advices.length + ' times.')
+  $('#display-take-advice-data').text('You responded to your advice ' + takeAdvicesArray.length + ' times. \t\nYou took your own advice ' + totalYes + ' times, or ' + percent + '% of the time.')
 }
 
 const takeAdviceDataFail = (response) => {
   console.log(response)
   console.log('error on take advice display')
-  $('#display-take-advice-data').text('error' + response.take_advices[0].yes_or_no)
+  $('#display-take-advice-data').text('error, you must respond yes or not to your advice before you can get any data about it')
 }
 
 module.exports = {
