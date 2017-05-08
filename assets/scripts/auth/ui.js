@@ -31,6 +31,7 @@ const signInSuccess = (response) => {
   $('#sign-in-error').text('')
   $('#display_advice').text('take your own advice')
   $('#get-take-advice-data').css('display', 'block')
+  $('#display-take-advice-data').text('get your advice stats')
   store.advices = null
   store.currentNum = -1
 }
@@ -204,7 +205,7 @@ const takeYesAdviceFail = (response) => {
 }
 
 const takeAdviceDataSucces = (response) => {
-  console.log('response.take_advices.yes_or_no', response.take_advices.yes_or_no)
+  console.log('response.take_advices', response.take_advices)
   const YesNoArray = []
   const takeAdvicesArray = response.take_advices
   for (let i = 0; i < takeAdvicesArray.length; i++) {
