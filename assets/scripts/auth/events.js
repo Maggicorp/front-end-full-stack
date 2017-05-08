@@ -77,8 +77,6 @@ const onAddDefaultAdvice = function () {
 const onDeleteAdvice = function () {
   event.preventDefault()
   console.log('delete this advice clicked button')
-  // const data = getFormFields()
-  // console.log('this after get form fields', data)
   if (store.currentNum >= 0 && store.advices[store.currentNum] !== undefined) {
     api.deleteAdvice()
       .then(ui.adviceDeleteSuccess)
@@ -110,10 +108,6 @@ const onEditAdvice = function (event) {
         console.log(data)
         console.log(newAdvice)
         $('#display_advice').text(newAdvice)
-      //   api.showAdvice()
-      //     .then(ui.adviceIndexSucces)
-      //     .catch(ui.adviceIndexFail)
-      // })
       })
       .catch(ui.adviceEditFail)
   } else {
