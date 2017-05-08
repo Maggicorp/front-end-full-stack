@@ -154,7 +154,7 @@ const takeNoAdvice = () => {
 
 const takeYesAdvice = () => {
   console.log('take yes advice api')
-  // console.log(store.advices[store.currentNum].id)
+  console.log('advice to number for yes is', store.advices[store.currentNum].id)
   return $.ajax({
     url: config.apiOrigin + '/take_advices',
     method: 'POST',
@@ -171,6 +171,17 @@ const takeYesAdvice = () => {
   })
 }
 
+const showTakeAdviceData = () => {
+  console.log('at show take_advices')
+  return $.ajax({
+    url: config.apiOrigin + '/take_advices',
+    method: 'GET',
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    }
+  })
+}
+
 module.exports = {
   signUp,
   signIn,
@@ -183,5 +194,6 @@ module.exports = {
   editAdvice,
   deleteAllAdvice,
   takeNoAdvice,
-  takeYesAdvice
+  takeYesAdvice,
+  showTakeAdviceData
 }

@@ -201,6 +201,20 @@ const takeYesAdviceFail = (response) => {
   $('#take-advice-success').text('')
 }
 
+const takeAdviceDataSucces = (response) => {
+  console.log('response.take_advices', response.take_advices)
+  console.log('response.take_advices[0]', response.take_advices[0])
+  console.log('response.take_advices[0].yes_or_no', response.take_advices[0].yes_or_no)
+  console.log('success on take advice display')
+  $('#display-take-advice-data').text('success, the first adivce you did take? - ' + response.take_advices[0].yes_or_no + ' - is no. You took your own advice ' + response.take_advices.length + ' times.')
+}
+
+const takeAdviceDataFail = (response) => {
+  console.log(response)
+  console.log('error on take advice display')
+  $('#display-take-advice-data').text('error' + response.take_advices[0].yes_or_no)
+}
+
 module.exports = {
   signUpSuccess,
   signUpFailure,
@@ -224,5 +238,7 @@ module.exports = {
   takeNoAdviceFail,
   takeNoAdviceSuccess,
   takeYesAdviceSuccess,
-  takeYesAdviceFail
+  takeYesAdviceFail,
+  takeAdviceDataFail,
+  takeAdviceDataSucces
 }

@@ -109,8 +109,9 @@ const onDeleteAllAdvice = function () {
 const onTakeAdviceNo = function () {
   event.preventDefault()
   console.log('cliked do not take advice')
-  console.log(store.currentNum)
+  console.log('advice id num is', store.currentNum)
   if (store.currentNum >= 0 && store.advices[store.currentNum] !== undefined) {
+    console.log('advice is ', store.advices[store.currentNum])
     api.takeNoAdvice()
       .then(ui.takeNoAdviceSuccess)
       .catch(ui.takeNoAdviceFail)
@@ -125,6 +126,7 @@ const onTakeAdviceYes = function () {
   console.log('cliked yes take advice')
   console.log(store.currentNum)
   if (store.currentNum >= 0 && store.advices[store.currentNum] !== undefined) {
+    console.log('advice is ', store.advices[store.currentNum])
     api.takeYesAdvice()
       .then(ui.takeYesAdviceSuccess)
       .catch(ui.takeYesAdviceFail)
@@ -132,6 +134,14 @@ const onTakeAdviceYes = function () {
     console.log('must you must select advice to take it')
     $('#take-advice-error').text('You must get advice before you can take it')
   }
+}
+
+const onTakeAdviceData = function () {
+  event.preventDefault()
+  console.log('clicked button on take advice data')
+  api.showTakeAdviceData()
+    .then(ui.takeAdviceDataSucces)
+    .catch(ui.takeAdviceDataFail)
 }
 
 const addHandlers = () => {
@@ -147,6 +157,7 @@ const addHandlers = () => {
   $('.delete-all').on('submit', onDeleteAllAdvice)
   $('#take_advice_no').on('click', onTakeAdviceNo)
   $('#take_advice_yes').on('click', onTakeAdviceYes)
+  $('.take-advice-data').on('submit', onTakeAdviceData)
 }
 
 module.exports = {
