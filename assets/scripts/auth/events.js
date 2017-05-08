@@ -74,14 +74,25 @@ const onAddDefaultAdvice = function () {
     .catch(ui.adviceAddFail)
 }
 
-const onDeleteAdvice = function (event) {
+const onDeleteAdvice = function () {
   event.preventDefault()
-  console.log('clicked button')
-  const data = getFormFields(this)
-  console.log('this after get form fields', data)
-  api.deleteAdvice(data)
-    .then(ui.adviceDeleteSuccess)
-    .catch(ui.adviceDeleteFail)
+  console.log('delete this advice clicked button')
+  // const data = getFormFields()
+  // console.log('this after get form fields', data)
+  if (store.currentNum >= 0 && store.advices[store.currentNum] !== undefined) {
+    api.deleteAdvice()
+      .then(ui.adviceDeleteSuccess)
+      .then(() => {
+        api.showAdvice()
+          .then(ui.adviceIndexSucces)
+          .catch(ui.adviceIndexFail)
+      })
+      .catch(ui.adviceDeleteFail)
+  } else {
+    console.log('something went wrong')
+    $('#delete-advice-error').text('error, please display advice to delete')
+    $('#delete-advice-success').text('')
+  }
 }
 
 const onEditAdvice = function (event) {

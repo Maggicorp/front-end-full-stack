@@ -91,11 +91,11 @@ const addDefaultAdvice = () => {
   })
 }
 
-const deleteAdvice = (response) => {
-  console.log('at delete advice')
-  console.log('passed data is', response, 'data.advice.id is ', response.advice.id)
+const deleteAdvice = () => {
+  console.log('at api delete advice')
+  // console.log('current id number is data is', store.advices[store.currentNum].id)
   return $.ajax({
-    url: config.apiOrigin + '/advices/' + response.advice.id,
+    url: config.apiOrigin + '/advices/' + store.advices[store.currentNum].id,
     method: 'DELETE',
     headers: {
       Authorization: 'Token token=' + store.user.token

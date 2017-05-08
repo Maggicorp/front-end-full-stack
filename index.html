@@ -70,6 +70,16 @@
               </fieldset>
             </form>
 
+            <div class="error-message" id="delete-advice-error"> </div>
+            <div class="success-message" id="delete-advice-success"></div>
+
+            <form id="delete-advice" class="delete-advice clear-input">
+              <fieldset>
+                    <legend> Delete this advice </legend>
+              <input class="push btn delete" type="submit" name="submit" value="Delete This Advice">
+            </fieldset>
+          </form>
+
           <div class="success-message" id="add-default-advice-success"> </div>
 
           <form id="add-default-advice" class="add-default-advice clear-input">
@@ -89,17 +99,6 @@
             <input type="number" name="advice[id]" placeholder="advice id number">
             <input type="text" name="advice[idea]" placeholder="Change advice here">
             <input  class="push btn" type="submit" name="submit" value="Submit Changes">
-          </fieldset>
-        </form>
-
-        <div class="error-message" id="delete-advice-error"> </div>
-        <div class="success-message" id="delete-advice-success"></div>
-
-          <form id="delete-advice" class="delete-advice clear-input">
-            <fieldset>
-                  <legend> Delete some advice </legend>
-            <input type="number" name="advice[id]" placeholder="advice id number">
-            <input class="push btn delete" type="submit" name="submit" value="Delete This Advice">
           </fieldset>
         </form>
 

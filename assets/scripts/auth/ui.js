@@ -135,16 +135,16 @@ const adviceAddFail = (response) => {
   $('#add-advice-success').text('')
 }
 
-const adviceDeleteSuccess = () => {
+const adviceDeleteSuccess = (response) => {
   console.log('success')
   $('.delete-advice').trigger('reset')
   $('#delete-advice-error').text('')
   $('#delete-advice-success').text('advice deleted')
   store.currentNum = -1
 }
-const adviceDeleteFail = () => {
+const adviceDeleteFail = (response) => {
   console.log('something went wrong')
-  $('#delete-advice-error').text('please enter valid advice id number')
+  $('#delete-advice-error').text('please display advice to delelete')
   $('#delete-advice-success').text('')
   store.currentNum = -1
 }
