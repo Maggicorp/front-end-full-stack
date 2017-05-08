@@ -107,8 +107,10 @@ const deleteAdvice = () => {
 const editAdvice = (data) => {
   console.log('edit advice data', data)
   console.log(data)
+  // store.update = data.advices.idea
+  // console.log(store.update)
   return $.ajax({
-    url: config.apiOrigin + '/advices/' + data.advice.id,
+    url: config.apiOrigin + '/advices/' + store.advices[store.currentNum].id,
     method: 'PATCH',
     controller: 'advices',
     headers: {

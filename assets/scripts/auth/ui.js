@@ -99,6 +99,18 @@ const adviceIndexSucces = (response) => {
   $('#display_advice').text(store.advices[randNum].idea + '! (id: ' + store.advices[randNum].id + ')')
 }
 
+const adviceEditIndexSucces = (response) => {
+  console.log('advice index success repsonse', response)
+  // $('.error-message').text('')
+  // $('.success-message').text('')
+  store.advices = response.advices
+  // const num = store.advices.length
+  // const randNum = Math.floor(Math.random() * num)
+  // store.currentNum = randNum
+  console.log(store.currentNum)
+  $('#display_advice').text(store.advices[store.currentNum].idea + '! (id: ' + store.advices[store.currentNum].id + ')')
+}
+
 let added
 
 const adviceAddSuccess = (response) => {
@@ -157,9 +169,10 @@ const adviceEditSuccess = (response) => {
   $('#edit-advice-error').text('')
   $('#edit-advice-success').text('advice edited')
 }
+
 const adviceEditFail = (response) => {
   console.log('something went wrong')
-  $('#edit-advice-error').text('please enter valid advice id number')
+  $('#edit-advice-error').text('error, please make sure advice is selected and input is valid')
   $('#edit-advice-success').text('')
 }
 
@@ -250,5 +263,6 @@ module.exports = {
   takeYesAdviceSuccess,
   takeYesAdviceFail,
   takeAdviceDataFail,
-  takeAdviceDataSucces
+  takeAdviceDataSucces,
+  adviceEditIndexSucces
 }

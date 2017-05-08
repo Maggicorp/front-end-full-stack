@@ -58,17 +58,19 @@
           </fieldset>
         </form>
 
-        <div class="error-message" id="add-advice-error"> </div>
-        <div class="success-message" id="add-advice-success"> </div>
 
-        <form id="add_advice" class="add-advice alter_advice clear-input">
-          <fieldset>
-            <legend> Add Advice </legend>
-               <input type="text" name="advice[idea]" placeholder="Give yourself advice">
-                <input class="push btn" type="submit" name="submit" value="Submit New Advice">
-                    <hr>
+            <div class="error-message" id="edit-advice-error"></div>
+            <div class="success-message" id="edit-advice-success"></div>
+
+            <form id="edit_advice" class="edit_advice clear-input">
+              <fieldset>
+                    <legend> Edit this Advice </legend>
+                <!-- <input type="number" name="advice[id]" placeholder="advice id number"> -->
+                <input type="text" name="advice[idea]" placeholder="Change advice here">
+                <input  class="push btn" type="submit" name="submit" value="Submit Changes">
               </fieldset>
             </form>
+
 
             <div class="error-message" id="delete-advice-error"> </div>
             <div class="success-message" id="delete-advice-success"></div>
@@ -89,52 +91,52 @@
                   </fieldset>
             </form>
 
+            <div class="error-message" id="add-advice-error"> </div>
+            <div class="success-message" id="add-advice-success"> </div>
 
-        <div class="error-message" id="edit-advice-error"></div>
-        <div class="success-message" id="edit-advice-success"></div>
-
-        <form id="edit_advice" class="edit_advice clear-input">
-          <fieldset>
-                <legend> Edit Advice </legend>
-            <input type="number" name="advice[id]" placeholder="advice id number">
-            <input type="text" name="advice[idea]" placeholder="Change advice here">
-            <input  class="push btn" type="submit" name="submit" value="Submit Changes">
-          </fieldset>
-        </form>
-
-        <div class="error-message" id="change-password-error"> </div>
-        <div class="success-message" id="change-password-success"> </div>
-
-                <form id="change-password" class="clear-input change-password">
-                  <fieldset>
-                    <legend> Change Password </legend>
-                    <input type="password" name="passwords[old]" placeholder="old password"><br>
-                    <input type="password" name="passwords[new]" placeholder="new password"><br>
-                    <input class="push btn" type="submit" name="submit" value="Change Password">
-                  </fieldset>
-                </form>
-
-                <form id="sign-out" class="sign-out">
-                  <fieldset>
-                    <legend> Sign Out </legend>
-                    <input class="push btn" type="submit" name="submit" value="Sign Out">
+            <form id="add_advice" class="add-advice alter_advice clear-input">
+              <fieldset>
+                <legend> Add Advice </legend>
+                   <input type="text" name="advice[idea]" placeholder="Give yourself advice">
+                    <input class="push btn" type="submit" name="submit" value="Submit New Advice">
+                        <hr>
                   </fieldset>
                 </form>
 
 
-      <div class="error-message" id="delete-all-error"> </div>
-      <div class="success-message" id="delete-all-success"> </div>
-          <form id="delete_all_advice" class="delete-all">
-            <fieldset>
-            <input class="push delete btn" type="submit" name="submit" value="Delete All Advice">
-          </fieldset>
-        </form>
 
     <form id="get-take-advice-data" class="clear-input take-advice-data">
     <fieldset>
       <legend>How much of your own advice do you take?</legend>
       <input class="push take-advice-data btn" type="submit" name="submit" value="Get your info">
       <div id='display-take-advice-data' class='display-take-advice-data display_advice'>Get your advice stats here!</div>
+    </fieldset>
+  </form>
+
+        <div class="error-message" id="delete-all-error"> </div>
+        <div class="success-message" id="delete-all-success"> </div>
+            <form id="delete_all_advice" class="delete-all">
+              <fieldset>
+              <input class="push delete btn" type="submit" name="submit" value="Delete All Advice">
+            </fieldset>
+          </form>
+
+          <div class="error-message" id="change-password-error"> </div>
+          <div class="success-message" id="change-password-success"> </div>
+          <form id="change-password" class="clear-input change-password">
+            <fieldset>
+              <legend> Change Password </legend>
+              <input type="password" name="passwords[old]" placeholder="old password"><br>
+              <input type="password" name="passwords[new]" placeholder="new password"><br>
+              <input class="push btn" type="submit" name="submit" value="Change Password">
+            </fieldset>
+          </form>
+
+
+  <form id="sign-out" class="sign-out">
+    <fieldset>
+      <legend> Sign Out </legend>
+      <input class="push btn" type="submit" name="submit" value="Sign Out">
     </fieldset>
   </form>
 

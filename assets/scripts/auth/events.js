@@ -100,9 +100,20 @@ const onEditAdvice = function (event) {
   console.log('clicked button')
   const data = getFormFields(this)
   console.log('this after get form fields', data)
-  api.editAdvice(data)
-    .then(ui.adviceEditSuccess)
-    .catch(ui.adviceEditFail)
+  if (store.currentNum >= 0 && store.advices[store.currentNum] !== undefined) {
+    api.editAdvice(data)
+      .then(ui.adviceEditSuccess)
+      .then(() => {
+        api.showAdvice()
+          .then(ui.adviceEditIndexSucces)
+          .catch(ui.adviceIndexFail)
+      })
+      .catch(ui.adviceEditFail)
+  } else {
+    console.log('something went wrong')
+    $('#edit-advice-error').text('error, please make sure advice is selected and input is valid')
+    $('#edit-advice-success').text('')
+  }
 }
 
 const onDeleteAllAdvice = function () {
