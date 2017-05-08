@@ -100,13 +100,20 @@ const onEditAdvice = function (event) {
   console.log('clicked button')
   const data = getFormFields(this)
   console.log('this after get form fields', data)
+  const newAdvice = data.advice.idea
+  console.log(newAdvice)
   if (store.currentNum >= 0 && store.advices[store.currentNum] !== undefined) {
     api.editAdvice(data)
       .then(ui.adviceEditSuccess)
-      .then(() => {
-        api.showAdvice()
-          .then(ui.adviceEditIndexSucces)
-          .catch(ui.adviceIndexFail)
+      .then((data) => {
+        console.log('click')
+        console.log(data)
+        console.log(newAdvice)
+        $('#display_advice').text(newAdvice)
+      //   api.showAdvice()
+      //     .then(ui.adviceIndexSucces)
+      //     .catch(ui.adviceIndexFail)
+      // })
       })
       .catch(ui.adviceEditFail)
   } else {
