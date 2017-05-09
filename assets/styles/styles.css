@@ -45,7 +45,7 @@ div .register {
 }
 form {
   display: block;
-	max-width: 400px;
+	max-width: 500px;
 	min-width: 300px;
 	text-align: center;
 	padding: 5px 10px 10px 10px;
@@ -64,6 +64,8 @@ form {
 
 .get_advice {
   display: none;
+  width: 600;
+  min-width: 300;
 }
 
 .add-advice {
@@ -89,9 +91,11 @@ form {
 .add-default-advice {
   display: none;
 }
+
 .get-example-advice {
   display: none;
 }
+
 .btn {
   background: #3498db;
   background-image: -webkit-linear-gradient(top, #3498db, #2980b9);
@@ -147,7 +151,7 @@ input {
 	font-family: 'Shadows Into Light', cursive;
 }
 
-div .display_advice {
+.display_advice {
 	border-radius: 5px;
 	font-size: 100%;
  	padding: 5px 10px;
@@ -156,7 +160,22 @@ div .display_advice {
 	background: white;
 	border: outset 5px #3866AE;
 	width: 90%;
+  min-height: 75px;
 }
+
+.display-example {
+  border: inset 5px green;
+}
+
+.display-take-advice-data {
+  border: inset 5px purple;
+}
+
+/*.get_advice {
+  	border: outset 5px #3866AE;
+    background-color: rgba(240,248,255, .8);
+    height: 100px;
+}*/
 
 footer {
 	background-color: rgba(240,248,255, .5);

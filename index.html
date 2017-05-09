@@ -41,6 +41,18 @@
           </fieldset>
         </form>
 
+        <div class="error-message" id="add-advice-error"> </div>
+        <div class="success-message" id="add-advice-success"> </div>
+
+        <form id="add_advice" class="add-advice alter_advice clear-input">
+          <fieldset>
+            <legend> Write your own Advice </legend>
+               <input type="text" name="advice[idea]" placeholder="Give yourself advice">
+                <input class="push btn" type="submit" name="submit" value="Add your Personal Advice to your Advice Library ">
+                    <hr>
+              </fieldset>
+            </form>
+
         <div class="success-message" id="add-default-advice-success"> </div>
 
         <form id="add-default-advice" class="add-default-advice clear-input">
@@ -51,19 +63,6 @@
             <div><h4>Advice from the cloud is immediately added to your advice library.  You can see this advice by clicking 'get advice', then you can take, edit, or delete it.  Add as much cloud advice as you want!</h4></div>
           </form>
 
-          <div class="error-message" id="add-advice-error"> </div>
-          <div class="success-message" id="add-advice-success"> </div>
-
-          <form id="add_advice" class="add-advice alter_advice clear-input">
-            <fieldset>
-              <legend> Write your own Advice </legend>
-                 <input type="text" name="advice[idea]" placeholder="Give yourself advice">
-                  <input class="push btn" type="submit" name="submit" value="Add your Personal Advice to your Advice Library ">
-                      <hr>
-                </fieldset>
-              </form>
-
-
         <div class="error-message" id="get-advice-error"> </div>
         <div class="error-message" id="take-advice-error"> </div>
         <div class="success-message" id="take-advice-success"> </div>
@@ -71,15 +70,14 @@
         <form id="get_advice" class="clear-input get_advice index-advice">
           <fieldset>
             <legend> Get Advice from your own Advice Library</legend>
-            <div id="display_advice" class="display_advice"> Click below to get some advice </div>
+              <input class="push btn" type="submit" name="submit" value="Show Advice">
+            <div id="display_advice" class="display_advice"> Your personal Advice Displays Here </div>
             <label> Will you take this advice?
             <input class="take_advice push btn" id="take_advice_yes" type="button" name="yes_submit" value="Yes">
             <input class="take_advice push btn" id="take_advice_no" type="button" name="no_submit" value="No">
             </label>
-            <br>
-            <input class="push btn" type="submit" name="submit" value="Get Advice">
           </fieldset>
-          <div><h4>Advice loops randomly.  If you are getting the same advice or it seems like the advice isn't changing add more advice!</h4></div>
+          <div><h4>Note: Advice loops randomly.  If you are getting the same advice or it seems like the advice isn't changing add more advice! The advice displayed is the advice that is selected to edit or delete. </h4></div>
         </form>
 
             <div class="error-message" id="edit-advice-error"></div>
@@ -87,9 +85,9 @@
 
             <form id="edit_advice" class="edit_advice clear-input">
               <fieldset>
-                    <legend> Edit this Advice </legend>
+                    <label> Edit this Advice:
                 <input type="text" name="advice[idea]" placeholder="Change advice here">
-                <input  class="push btn" type="submit" name="submit" value="Submit Changes">
+                <input  class="push btn" type="submit" name="submit" value="Submit Changes"></label>
               </fieldset>
             </form>
 
@@ -98,34 +96,37 @@
 
             <form id="delete-advice" class="delete-advice clear-input">
               <fieldset>
-                    <legend> Delete this advice </legend>
               <input class="push btn delete" type="submit" name="submit" value="Delete This Advice">
             </fieldset>
           </form>
 
+          <div class="error-message" id="delete-all-error"> </div>
+          <div class="success-message" id="delete-all-success"> </div>
+              <form id="delete_all_advice" class="delete-all">
+                <fieldset>
+                <input class="push delete btn" type="submit" name="submit" value="Delete All Advice">
+              </fieldset>
+            </form>
+
+
     <form id="get-take-advice-data" class="clear-input take-advice-data">
     <fieldset>
-      <legend>How much of your own advice do you take?</legend>
-      <input class="push take-advice-data btn" type="submit" name="submit" value="Get your info">
-      <div id='display-take-advice-data' class='display-take-advice-data display_advice'>Get your advice stats here!</div>
+      <legend>How much of your own advice do you take? Track your Advice</legend>
+      <input class="push take-advice-data btn" type="submit" name="submit" value="See advice tracker data">
+      <div id='display-take-advice-data' class='display-take-advice-data display_advice'>Advice tracker data displays here!</div>
     </fieldset>
   </form>
 
-        <div class="error-message" id="delete-all-error"> </div>
-        <div class="success-message" id="delete-all-success"> </div>
-            <form id="delete_all_advice" class="delete-all">
-              <fieldset>
-              <input class="push delete btn" type="submit" name="submit" value="Delete All Advice">
-            </fieldset>
-          </form>
+
+          <div class="error-message" id="get-example-advice-error"> </div>
+
 
           <form id="get-example-advice" class="clear-input get-example-advice">
           <fieldset>
             <legend>Looking for inspiration? Here is some example advice.  If you like it, you can copy it and add it to your own advice library</legend>
-            <input class="push get-example-advice btn" type="submit" name="submit" value="Get your info">
-            <div id='display-example-advice' class='display-example advice display_advice'>Click here to get example advice!</div>
+            <input class="push get-example-advice btn" type="submit" name="submit" value="See example advice">
+            <div id='display-example-advice' class='display-example advice display_advice'>Inspirational example advice displays here!</div>
           </fieldset>
-            <div><h4>Inspirational example advice uses a third party api and causes a mixed content error in many browsers.  If no advice is displaying you can temporarily disable the content blocker.</h4></div>
         </form>
 
           <div class="error-message" id="change-password-error"> </div>
@@ -139,6 +140,7 @@
             </fieldset>
           </form>
 
+          <div class="error-message" id="sign-out-error"> </div>
   <form id="sign-out" class="sign-out">
     <fieldset>
       <legend> Sign Out </legend>

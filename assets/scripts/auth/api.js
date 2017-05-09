@@ -4,8 +4,6 @@ const config = require('../config.js')
 const store = require('../store.js')
 
 const signUp = (data) => {
-  console.log('reached api sign up')
-  console.log(data)
   return $.ajax({
     url: config.apiOrigin + '/sign-up',
     method: 'POST',
@@ -44,7 +42,6 @@ const signOut = (data) => {
 }
 
 const showAdvice = () => {
-  console.log('at show advice')
   return $.ajax({
     url: config.apiOrigin + '/advices',
     method: 'GET',
@@ -55,9 +52,6 @@ const showAdvice = () => {
 }
 
 const addAdvice = (data) => {
-  console.log('at show advice')
-  console.log('add advice data', data)
-  console.log(data)
   return $.ajax({
     url: config.apiOrigin + '/advices',
     method: 'POST',
@@ -75,7 +69,6 @@ const addDefaultAdvice = () => {
   const arrayLength = defaultAdviceArray.length
   const randNum = Math.floor(Math.random() * arrayLength)
   const adviceString = defaultAdviceArray[randNum]
-  console.log(adviceString)
   return $.ajax({
     url: config.apiOrigin + '/advices',
     method: 'POST',
@@ -92,7 +85,6 @@ const addDefaultAdvice = () => {
 }
 
 const deleteAdvice = () => {
-  console.log('at api delete advice')
   return $.ajax({
     url: config.apiOrigin + '/advices/' + store.advices[store.currentNum].id,
     method: 'DELETE',
@@ -104,8 +96,6 @@ const deleteAdvice = () => {
 }
 
 const editAdvice = (data) => {
-  console.log('edit advice data', data)
-  console.log(data)
   return $.ajax({
     url: config.apiOrigin + '/advices/' + store.advices[store.currentNum].id,
     method: 'PATCH',
@@ -118,8 +108,6 @@ const editAdvice = (data) => {
 }
 
 const deleteAllAdvice = (num) => {
-  console.log('at delete advice')
-  console.log(num)
   return $.ajax({
     url: config.apiOrigin + '/advices/' + num,
     method: 'DELETE',
@@ -131,7 +119,6 @@ const deleteAllAdvice = (num) => {
 }
 
 const takeNoAdvice = () => {
-  console.log('take no advice api')
   return $.ajax({
     url: config.apiOrigin + '/take_advices',
     method: 'POST',
@@ -149,8 +136,6 @@ const takeNoAdvice = () => {
 }
 
 const takeYesAdvice = () => {
-  console.log('take yes advice api')
-  console.log('advice to number for yes is', store.advices[store.currentNum].id)
   return $.ajax({
     url: config.apiOrigin + '/take_advices',
     method: 'POST',
@@ -168,7 +153,6 @@ const takeYesAdvice = () => {
 }
 
 const showTakeAdviceData = () => {
-  console.log('at show take_advices')
   return $.ajax({
     url: config.apiOrigin + '/take_advices',
     method: 'GET',
@@ -179,9 +163,8 @@ const showTakeAdviceData = () => {
 }
 
 const showExampleAdvice = () => {
-  console.log('at show example advice')
   return $.ajax({
-    url: 'http://api.adviceslip.com/advice',
+    url: 'https://api.adviceslip.com/advice',
     method: 'GET'
   })
 }
