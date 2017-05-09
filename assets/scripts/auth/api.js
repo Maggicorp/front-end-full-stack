@@ -169,6 +169,14 @@ const showExampleAdvice = () => {
     header: 'Access-Control-Allow-Origin: https://quotesondesign.com'})
 }
 
+const getRandomUserName = () => {
+  console.log('random usr name')
+  return $.ajax({
+    url: 'https://randomuser.me/api/?nat=gb&inc=name',
+    dataType: 'json'
+  })
+}
+
 module.exports = {
   signUp,
   signIn,
@@ -183,5 +191,6 @@ module.exports = {
   takeNoAdvice,
   takeYesAdvice,
   showTakeAdviceData,
-  showExampleAdvice
+  showExampleAdvice,
+  getRandomUserName
 }

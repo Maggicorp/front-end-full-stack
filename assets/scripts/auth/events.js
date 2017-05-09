@@ -187,6 +187,14 @@ const onGetExampleAdvice = function () {
     .catch(ui.exampleFail)
 }
 
+const onRandomUserName = function () {
+  event.preventDefault()
+  console.log('clicked get user name ')
+  api.getRandomUserName()
+    .then(ui.userNameSuccess)
+    .catch(ui.userNameFail)
+}
+
 const addHandlers = () => {
   $('#sign-up').on('submit', onSignUp)
   $('#sign-in').on('submit', onSignIn)
@@ -202,6 +210,7 @@ const addHandlers = () => {
   $('#take_advice_yes').on('click', onTakeAdviceYes)
   $('.take-advice-data').on('submit', onTakeAdviceData)
   $('#get-example-advice').on('submit', onGetExampleAdvice)
+  $('.random-user-name-api').on('submit', onRandomUserName)
 }
 
 module.exports = {

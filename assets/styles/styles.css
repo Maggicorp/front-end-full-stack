@@ -163,6 +163,18 @@ input {
   min-height: 75px;
 }
 
+.display-fake-user {
+	border-radius: 5px;
+	font-size: 100%;
+ 	padding: 5px 10px;
+	margin: 0 auto;
+  text-align: center;
+	font-family: 'Shadows Into Light', cursive;
+	background: white;
+	border: outset 5px #3866AE;
+  width: 250px;
+}
+
 .display-example {
   border: inset 5px green;
 }
@@ -170,12 +182,6 @@ input {
 .display-take-advice-data {
   border: inset 5px purple;
 }
-
-/*.get_advice {
-  	border: outset 5px #3866AE;
-    background-color: rgba(240,248,255, .8);
-    height: 100px;
-}*/
 
 footer {
 	background-color: rgba(240,248,255, .5);

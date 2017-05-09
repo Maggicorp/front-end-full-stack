@@ -31,6 +31,8 @@ const signInSuccess = (response) => {
   store.advices = null
   store.currentNum = -1
   $('#get-example-advice').css('display', 'block')
+  $('.get-fake-name').css('display', 'none')
+  $('.display-fake-user').text('fake name displays here')
 }
 
 const signInFailure = () => {
@@ -68,6 +70,7 @@ const signOutSuccess = () => {
   $('#display_advice').text('take your own advice')
   $('#get-take-advice-data').css('display', 'none')
   $('#get-example-advice').css('display', 'none')
+  $('.get-fake-name').css('display', 'block')
 }
 
 const signOutFailure = () => {
@@ -205,9 +208,20 @@ const exampleSuccess = (data) => {
   $.getJSON('https://quotesondesign.com/wp-json/posts?filter[orderby]=rand&filter[posts_per_page]=1&callback=', function (a) {
     $('#display-example-advice').html(a[0].content + '<p>— ' + a[0].title + '</p>')
   })
-  // const adviceObj = JSON.parse(data)
-  // $('#display-example-advice').text(adviceObj.slip.advice)
-  // $('#get-eample-advice-error').text('')
+}
+
+const userNameSuccess = (data) => {
+  console.log('success', data)
+  console.log('data at zero', data.results[0])
+  console.log('data at two', data.results[0].name.first)
+  const firstName = data.results[0].name.first
+  console.log('variable is', firstName)
+  const lastName = data.results[0].name.last
+  $('#random-user-name-api').text(firstName + lastName)
+}
+
+const userNameFail = (data) => {
+  console.log('fail', data)
 }
 
 module.exports = {
@@ -237,5 +251,7 @@ module.exports = {
   takeAdviceDataFail,
   takeAdviceDataSucces,
   exampleFail,
-  exampleSuccess
+  exampleSuccess,
+  userNameFail,
+  userNameSuccess
 }
