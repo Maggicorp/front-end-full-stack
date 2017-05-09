@@ -166,9 +166,8 @@ const showExampleAdvice = () => {
   return $.ajax({
     url: 'https://quotesondesign.com/wp-json/posts?filter[orderby]=rand&filter[posts_per_page]=1',
     // url: 'http://api.adviceslip.com/advice',
-    method: 'GET'
-    // Access-Control-Allow-Origin:
-  })
+    method: 'GET',
+    header: 'Access-Control-Allow-Origin: https://quotesondesign.com'})
 }
 
 module.exports = {
