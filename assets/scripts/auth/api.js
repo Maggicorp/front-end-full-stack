@@ -164,8 +164,9 @@ const showTakeAdviceData = () => {
 
 const showExampleAdvice = () => {
   return $.ajax({
-    url: 'https://api.adviceslip.com/advice',
+    url: 'http://api.adviceslip.com/advice',
     method: 'GET'
+    // Access-Control-Allow-Origin:
   })
 }
 
