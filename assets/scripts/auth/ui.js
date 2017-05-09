@@ -217,7 +217,8 @@ const userNameSuccess = (data) => {
   const firstName = data.results[0].name.first
   console.log('variable is', firstName)
   const lastName = data.results[0].name.last
-  $('#random-user-name-api').text(firstName + lastName)
+  const lastNameString = lastName.charAt(0).toUpperCase() + lastName.slice(1)
+  $('#random-user-name-api').text(firstName + lastNameString)
 }
 
 const userNameFail = (data) => {

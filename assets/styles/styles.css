@@ -187,4 +187,5 @@ footer {
 	background-color: rgba(240,248,255, .5);
 	padding: 5px;
 	margin: 15px;
+  bottom: 0;
 }
