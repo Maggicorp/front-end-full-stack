@@ -33,6 +33,7 @@ const signInSuccess = (response) => {
   $('#get-example-advice').css('display', 'block')
   $('.get-fake-name').css('display', 'none')
   $('.display-fake-user').text('fake name displays here')
+  $('#display-example-advice').text('Example quotes and advice displays here!')
 }
 
 const signInFailure = () => {
@@ -148,6 +149,7 @@ const adviceDeleteAllSuccess =
   $('#delete-all-error').text('')
   $('#delete-all-success').text('all advice was deleted')
   $('#display_advice').text('all advice deleted, add new advice')
+  $('#display-take-advice-data').text('all advice deleted, add and take new advice to see advice tracker stats')
 }
 
 const adviceDeleteAllFail = (response) => {
