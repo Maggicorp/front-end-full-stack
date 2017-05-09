@@ -19,10 +19,9 @@
       <main>
 
         <div class="error-message" id="sign-up-error"> </div>
-
         <form id="sign-up" class="clear-input">
           <fieldset>
-            <legend> Sign up </legend>
+            <legend><h2> Sign up </h2> </legend>
             <input type="text" name="credentials[email]" placeholder="username"><br>
             <input type="password" name="credentials[password]" placeholder="password"><br>
             <input class="clear-input" type="password" name="credentials[password_confirmation]" placeholder="password confirmation"><br>
@@ -30,55 +29,57 @@
           </fieldset>
         </form>
 
-        <div class="error-message" id="sign-in-error"> </div>
+        <br>
 
+        <div class="error-message" id="sign-in-error"> </div>
         <form id="sign-in" class="clear-input">
           <fieldset>
-            <legend> Sign in </legend>
+            <legend><h2> Sign in </h2></legend>
             <input class="clear-input" type="text" name="credentials[email]" placeholder="username"><br>
             <input class="clear-input" type="password" name="credentials[password]" placeholder="password"><br>  <input class="clear-input" type="password" name="credentials[password_confirmation]" placeholder="password confirmation"><br>
             <input class="push btn" type="submit" name="submit" value="Sign In">
           </fieldset>
         </form>
 
+        <br>
 
         <form class="random-user-name-api get-fake-name">
           <fieldset>
-            <legend>Example fake User Names</legend>
+            <legend><h2>Example fake User Names</h2></legend>
           <input class="push btn" type="submit" name="submit" value="Random user name"> <div id="random-user-name-api" class="display-fake-user"> fake name displays here </div>
         </fieldset>
       </form>
 
-
         <div class="error-message" id="add-advice-error"> </div>
         <div class="success-message" id="add-advice-success"> </div>
-
         <form id="add_advice" class="add-advice alter_advice clear-input">
           <fieldset>
-            <legend> Write your own Advice </legend>
+            <legend><h2> Write your own Advice </h2> </legend>
                <input type="text" name="advice[idea]" placeholder="Give yourself advice">
                 <input class="push btn" type="submit" name="submit" value="Add your Personal Advice to your Advice Library ">
                     <hr>
               </fieldset>
             </form>
 
-        <div class="success-message" id="add-default-advice-success"> </div>
+            <br>
 
+        <div class="success-message" id="add-default-advice-success"> </div>
         <form id="add-default-advice" class="add-default-advice clear-input">
               <fieldset>
-                <legend> Add Advice from the Advice Cloud </legend>
+                <legend><h2> Add Advice from the Advice Cloud</h2> </legend>
                   <input class="push btn" type="submit" name="submit" value="Add Advice to your Advice Library">
                 </fieldset>
-            <div><h4>Advice from the cloud is immediately added to your advice library.  You can see this advice by clicking 'get advice', then you can take, edit, or delete it.  Add as much cloud advice as you want!</h4></div>
+            <div><h4>Advice from the cloud is immediately added to your advice library.  You can see this advice mixed in with your other library advice by clicking 'show advice', then you can take, edit, or delete it.</h4></div>
           </form>
+
+          <br>
 
         <div class="error-message" id="get-advice-error"> </div>
         <div class="error-message" id="take-advice-error"> </div>
         <div class="success-message" id="take-advice-success"> </div>
-
         <form id="get_advice" class="clear-input get_advice index-advice">
           <fieldset>
-            <legend> Get Advice from your own Advice Library</legend>
+            <legend><h2> Get Advice from your own Advice Library</h2></legend>
               <input class="push btn" type="submit" name="submit" value="Show Advice">
             <div id="display_advice" class="display_advice"> Your personal Advice Displays Here </div>
             <label> Will you take this advice?
@@ -89,10 +90,10 @@
           <div><h4>Note: Advice loops randomly.  If you are getting the same advice or it seems like the advice isn't changing add more advice! The advice displayed is the advice that is selected to edit or delete. </h4></div>
         </form>
 
-            <div class="error-message" id="edit-advice-error"></div>
-            <div class="success-message" id="edit-advice-success"></div>
 
             <form id="edit_advice" class="edit_advice clear-input">
+              <div class="error-message" id="edit-advice-error"></div>
+              <div class="success-message" id="edit-advice-success"></div>
               <fieldset>
                     <label> Edit this Advice:
                 <input type="text" name="advice[idea]" placeholder="Change advice here">
@@ -100,62 +101,69 @@
               </fieldset>
             </form>
 
-            <div class="error-message" id="delete-advice-error"> </div>
-            <div class="success-message" id="delete-advice-success"></div>
 
             <form id="delete-advice" class="delete-advice clear-input">
+              <div class="error-message" id="delete-advice-error"> </div>
+              <div class="success-message" id="delete-advice-success"></div>
               <fieldset>
               <input class="push btn delete" type="submit" name="submit" value="Delete This Advice">
             </fieldset>
           </form>
 
-          <div class="error-message" id="delete-all-error"> </div>
-          <div class="success-message" id="delete-all-success"> </div>
+
               <form id="delete_all_advice" class="delete-all">
+                <div class="error-message" id="delete-all-error"> </div>
+                <div class="success-message" id="delete-all-success"> </div>
                 <fieldset>
                 <input class="push delete btn" type="submit" name="submit" value="Delete All Advice">
               </fieldset>
             </form>
 
+            <br>
 
     <form id="get-take-advice-data" class="clear-input take-advice-data">
     <fieldset>
-      <legend>How much of your own advice do you take? Track your Advice</legend>
+      <legend><h2>How much of your own advice do you take? Track your Advice</h2></legend>
       <input class="push take-advice-data btn" type="submit" name="submit" value="See advice tracker data">
       <div id='display-take-advice-data' class='display-take-advice-data display_advice'>Advice tracker data displays here!</div>
     </fieldset>
   </form>
 
+        <br>
 
           <div class="error-message" id="get-example-advice-error"> </div>
-
-
           <form id="get-example-advice" class="clear-input get-example-advice">
           <fieldset>
-            <legend>Looking for inspiration? Here is some example advice and inspiring quotes.  If you like it, you can copy it and add it to your own advice library</legend>
+            <legend><h2>Looking for inspiration? </h2>Here is some example advice and inspiring quotes.  If you like it, you can copy it and add it to your own advice library</legend>
             <input class="push get-example-advice btn" type="submit" name="submit" value="See example advice">
             <div id='display-example-advice' class='display-example advice display_advice'>Inspirational example advice displays here!</div>
           </fieldset>
         </form>
 
+        <br>
+
           <div class="error-message" id="change-password-error"> </div>
           <div class="success-message" id="change-password-success"> </div>
           <form id="change-password" class="clear-input change-password">
             <fieldset>
-              <legend> Change Password </legend>
+              <legend><h2> Change Password </h2> </legend>
               <input type="password" name="passwords[old]" placeholder="old password"><br>
               <input type="password" name="passwords[new]" placeholder="new password"><br>
               <input class="push btn" type="submit" name="submit" value="Change Password">
             </fieldset>
           </form>
 
+<br>
           <div class="error-message" id="sign-out-error"> </div>
   <form id="sign-out" class="sign-out">
     <fieldset>
-      <legend> Sign Out </legend>
+      <legend> <h2>Sign Out </h2></legend>
       <input class="push btn" type="submit" name="submit" value="Sign Out">
     </fieldset>
   </form>
+
+  <br>
+  <br>
 
       </main>
       <footer>MaggiCorp &copy;2017</footer>

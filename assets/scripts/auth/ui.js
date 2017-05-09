@@ -201,28 +201,25 @@ const takeAdviceDataFail = (response) => {
 }
 
 const exampleFail = (response) => {
-  $('#get-example-advice-error').text('Error, no advice examples at this time.')
+  $('#get-example-advice-error').text('name generator is still loading, wait and try again later')
 }
 
 const exampleSuccess = (data) => {
   $.getJSON('https://quotesondesign.com/wp-json/posts?filter[orderby]=rand&filter[posts_per_page]=1&callback=', function (a) {
     $('#display-example-advice').html(a[0].content + '<p>— ' + a[0].title + '</p>')
   })
+  $('#get-example-advice-error').text('')
 }
 
 const userNameSuccess = (data) => {
-  console.log('success', data)
-  console.log('data at zero', data.results[0])
-  console.log('data at two', data.results[0].name.first)
   const firstName = data.results[0].name.first
-  console.log('variable is', firstName)
   const lastName = data.results[0].name.last
   const lastNameString = lastName.charAt(0).toUpperCase() + lastName.slice(1)
   $('#random-user-name-api').text(firstName + lastNameString)
 }
 
 const userNameFail = (data) => {
-  console.log('fail', data)
+  $('#random-user-name-api').text('name generator is still loading, wait and try again later')
 }
 
 module.exports = {

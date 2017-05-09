@@ -7,6 +7,7 @@ body {
   text-align: center;
   font-family: 'Shadows Into Light', cursive;
   text-shadow: 1px 1px 5px lightgray;
+  font-size: 16px;
 }
 
 .wrapper {
@@ -30,14 +31,11 @@ header {
 }
 
 h2 {
-	font-size: 160%;
-	transition: text-shadow 3s font-weight 3s color 3s;
-}
-h2:hover {
 	text-shadow: 2px 2px 10px white;
 	text-decoration: underline;
 	color: #340312;
 }
+
 div .register {
 	text-align: center;
 	margin: 0 auto;
@@ -49,8 +47,8 @@ form {
 	min-width: 300px;
 	text-align: center;
 	padding: 5px 10px 10px 10px;
-	margin: 5px auto;
-	font-size: 140%;
+	margin: 0px auto;
+	font-size: 16px;
 	background-color: rgba(240,248,255, .7)
 }
 
