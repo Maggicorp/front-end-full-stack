@@ -202,9 +202,12 @@ const exampleFail = (response) => {
 }
 
 const exampleSuccess = (data) => {
-  const adviceObj = JSON.parse(data)
-  $('#display-example-advice').text(adviceObj.slip.advice)
-  $('#get-eample-advice-error').text('')
+  $.getJSON('https://quotesondesign.com/wp-json/posts?filter[orderby]=rand&filter[posts_per_page]=1&callback=', function (a) {
+    $('#display-example-advice').html(a[0].content + '<p>— ' + a[0].title + '</p>')
+  })
+  // const adviceObj = JSON.parse(data)
+  // $('#display-example-advice').text(adviceObj.slip.advice)
+  // $('#get-eample-advice-error').text('')
 }
 
 module.exports = {
