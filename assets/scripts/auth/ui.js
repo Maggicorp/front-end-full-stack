@@ -99,6 +99,7 @@ const adviceIndexSucces = (response) => {
   $('#display_advice').text(store.advices[randNum].idea)
 }
 
+// creates variable to make display alternating success messages.
 let added
 
 const adviceAddSuccess = (response) => {

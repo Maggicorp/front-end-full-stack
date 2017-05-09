@@ -69,7 +69,7 @@ const addAdvice = (data) => {
   })
 }
 
-const defaultAdviceArray = ['Take a nap', 'Drink more coffee', 'Drink less coffee', 'Call your mom', 'Call your dad', 'Eat some candy', 'Go for a walk', 'Do some push ups', 'Drink some water', 'Do not spend more than you earn', 'Text a friend', 'Clean your room', 'Pet a dog', 'Turn off your phone', 'Wiggle your toes', 'Listen to music you like', 'Read a book']
+const defaultAdviceArray = ['Take a nap', 'Drink more coffee', 'No candy at the video store', 'Buy a new plant', 'Drink less coffee', 'Call your mom', 'Call your dad', 'Eat some candy', 'Go for a walk', 'Do some push ups', 'Drink some water', 'Do not spend more than you earn', 'Text a friend', 'Clean your room', 'Pet a dog', 'Turn off your phone', 'Wiggle your toes', 'Listen to music you like', 'Read a book']
 
 const addDefaultAdvice = () => {
   const arrayLength = defaultAdviceArray.length
@@ -93,7 +93,6 @@ const addDefaultAdvice = () => {
 
 const deleteAdvice = () => {
   console.log('at api delete advice')
-  // console.log('current id number is data is', store.advices[store.currentNum].id)
   return $.ajax({
     url: config.apiOrigin + '/advices/' + store.advices[store.currentNum].id,
     method: 'DELETE',
@@ -107,8 +106,6 @@ const deleteAdvice = () => {
 const editAdvice = (data) => {
   console.log('edit advice data', data)
   console.log(data)
-  // store.update = data.advices.idea
-  // console.log(store.update)
   return $.ajax({
     url: config.apiOrigin + '/advices/' + store.advices[store.currentNum].id,
     method: 'PATCH',
@@ -123,8 +120,6 @@ const editAdvice = (data) => {
 const deleteAllAdvice = (num) => {
   console.log('at delete advice')
   console.log(num)
-  // console.log(store.advices[0].id)
-  // for (let i = 0; i < store.advices.length; i++) {
   return $.ajax({
     url: config.apiOrigin + '/advices/' + num,
     method: 'DELETE',
@@ -137,7 +132,6 @@ const deleteAllAdvice = (num) => {
 
 const takeNoAdvice = () => {
   console.log('take no advice api')
-  // console.log(store.advices[store.currentNum].id)
   return $.ajax({
     url: config.apiOrigin + '/take_advices',
     method: 'POST',
@@ -189,9 +183,6 @@ const showExampleAdvice = () => {
   return $.ajax({
     url: 'http://api.adviceslip.com/advice',
     method: 'GET'
-    // headers: {
-    //   Authorization: 'Token token=' + store.user.token
-    // }
   })
 }
 

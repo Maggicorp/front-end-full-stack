@@ -23,6 +23,12 @@ body {
   background-color: #8ECAF9;
   min-height: 800px
 }
+
+header {
+  padding: 15px;
+  margin: 5px;
+}
+
 h2 {
 	font-size: 160%;
 	transition: text-shadow 3s font-weight 3s color 3s;
@@ -34,14 +40,11 @@ h2:hover {
 }
 div .register {
 	text-align: center;
-	/*float: left;*/
 	margin: 0 auto;
 	padding: 0 66% 0 0;
 }
 form {
   display: block;
-  /*float: left;*/
-  /*margin: 10px 10px;*/
 	max-width: 400px;
 	min-width: 300px;
 	text-align: center;
@@ -125,15 +128,6 @@ form {
   background:#7B0002;
 }
 
-@keyframes flash {
-   0%, 50%, 100% {
-      opacity: 1;
-   }
-   25%, 75% {
-      opacity: 0;
-   }
-}
-
 .success-message {
   text-shadow: 1px 1px 6px white;
   font-size: 16px;
@@ -152,6 +146,7 @@ input {
 	margin: 5px;
 	font-family: 'Shadows Into Light', cursive;
 }
+
 div .display_advice {
 	border-radius: 5px;
 	font-size: 100%;

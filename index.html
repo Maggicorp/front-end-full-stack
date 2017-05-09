@@ -45,9 +45,10 @@
 
         <form id="add-default-advice" class="add-default-advice clear-input">
               <fieldset>
-                <legend> Add Prewritten Advice </legend>
-                  <input class="push btn" type="submit" name="submit" value="Add Default Advice">
+                <legend> Add Advice from the Advice Cloud </legend>
+                  <input class="push btn" type="submit" name="submit" value="Add Advice to your Advice Library">
                 </fieldset>
+            <div><h4>Advice from the cloud is immediately added to your advice library.  You can see this advice by clicking 'get advice', then you can take, edit, or delete it.  Add as much cloud advice as you want!</h4></div>
           </form>
 
           <div class="error-message" id="add-advice-error"> </div>
@@ -55,9 +56,9 @@
 
           <form id="add_advice" class="add-advice alter_advice clear-input">
             <fieldset>
-              <legend> Add Advice </legend>
+              <legend> Write your own Advice </legend>
                  <input type="text" name="advice[idea]" placeholder="Give yourself advice">
-                  <input class="push btn" type="submit" name="submit" value="Submit New Advice">
+                  <input class="push btn" type="submit" name="submit" value="Add your Personal Advice to your Advice Library ">
                       <hr>
                 </fieldset>
               </form>
@@ -69,7 +70,7 @@
 
         <form id="get_advice" class="clear-input get_advice index-advice">
           <fieldset>
-            <legend> <h1>Get Advice</h1></legend>
+            <legend> Get Advice from your own Advice Library</legend>
             <div id="display_advice" class="display_advice"> Click below to get some advice </div>
             <label> Will you take this advice?
             <input class="take_advice push btn" id="take_advice_yes" type="button" name="yes_submit" value="Yes">
@@ -78,10 +79,8 @@
             <br>
             <input class="push btn" type="submit" name="submit" value="Get Advice">
           </fieldset>
-          <div><h5>note: advice loops randomly.  If you are getting the same advice or it seems like the advice isn't changing add more advice!</h5></div>
+          <div><h4>Advice loops randomly.  If you are getting the same advice or it seems like the advice isn't changing add more advice!</h4></div>
         </form>
-
-
 
             <div class="error-message" id="edit-advice-error"></div>
             <div class="success-message" id="edit-advice-success"></div>
@@ -89,12 +88,10 @@
             <form id="edit_advice" class="edit_advice clear-input">
               <fieldset>
                     <legend> Edit this Advice </legend>
-                <!-- <input type="number" name="advice[id]" placeholder="advice id number"> -->
                 <input type="text" name="advice[idea]" placeholder="Change advice here">
                 <input  class="push btn" type="submit" name="submit" value="Submit Changes">
               </fieldset>
             </form>
-
 
             <div class="error-message" id="delete-advice-error"> </div>
             <div class="success-message" id="delete-advice-success"></div>
@@ -128,6 +125,7 @@
             <input class="push get-example-advice btn" type="submit" name="submit" value="Get your info">
             <div id='display-example-advice' class='display-example advice display_advice'>Click here to get example advice!</div>
           </fieldset>
+            <div><h4>Inspirational example advice uses a third party api and causes a mixed content error in many browsers.  If no advice is displaying you can temporarily disable the content blocker.</h4></div>
         </form>
 
           <div class="error-message" id="change-password-error"> </div>
@@ -140,7 +138,6 @@
               <input class="push btn" type="submit" name="submit" value="Change Password">
             </fieldset>
           </form>
-
 
   <form id="sign-out" class="sign-out">
     <fieldset>
