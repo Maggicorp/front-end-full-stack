@@ -34,6 +34,7 @@ const signInSuccess = (response) => {
   $('#display-take-advice-data').text('get your advice stats')
   store.advices = null
   store.currentNum = -1
+  $('#get-example-advice').css('display', 'block')
 }
 
 const signInFailure = () => {
@@ -74,6 +75,7 @@ const signOutSuccess = () => {
   $('.success-message').text('')
   $('#display_advice').text('take your own advice')
   $('#get-take-advice-data').css('display', 'none')
+  $('#get-example-advice').css('display', 'none')
 }
 
 const signOutFailure = () => {
@@ -223,6 +225,17 @@ const takeAdviceDataFail = (response) => {
   $('#display-take-advice-data').text('error, you must respond yes or not to your advice before you can get any data about it')
 }
 
+const exampleFail = (response) => {
+  console.log('fail', response)
+}
+
+const exampleSuccess = (data) => {
+  console.log('success', data)
+  const adviceObj = JSON.parse(data)
+  console.log('string says', adviceObj.slip.advice)
+  $('#display-example-advice').text(adviceObj.slip.advice)
+}
+
 module.exports = {
   signUpSuccess,
   signUpFailure,
@@ -248,5 +261,7 @@ module.exports = {
   takeYesAdviceSuccess,
   takeYesAdviceFail,
   takeAdviceDataFail,
-  takeAdviceDataSucces
+  takeAdviceDataSucces,
+  exampleFail,
+  exampleSuccess
 }

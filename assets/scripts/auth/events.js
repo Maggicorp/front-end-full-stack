@@ -179,6 +179,14 @@ const onTakeAdviceData = function () {
     .catch(ui.takeAdviceDataFail)
 }
 
+const onGetExampleAdvice = function () {
+  event.preventDefault()
+  console.log('clicked button on get example advice ')
+  api.showExampleAdvice()
+    .then(ui.exampleSuccess)
+    .catch(ui.exampleFail)
+}
+
 const addHandlers = () => {
   $('#sign-up').on('submit', onSignUp)
   $('#sign-in').on('submit', onSignIn)
@@ -193,6 +201,7 @@ const addHandlers = () => {
   $('#take_advice_no').on('click', onTakeAdviceNo)
   $('#take_advice_yes').on('click', onTakeAdviceYes)
   $('.take-advice-data').on('submit', onTakeAdviceData)
+  $('#get-example-advice').on('submit', onGetExampleAdvice)
 }
 
 module.exports = {

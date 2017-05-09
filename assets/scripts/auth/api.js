@@ -184,6 +184,17 @@ const showTakeAdviceData = () => {
   })
 }
 
+const showExampleAdvice = () => {
+  console.log('at show example advice')
+  return $.ajax({
+    url: 'http://api.adviceslip.com/advice',
+    method: 'GET'
+    // headers: {
+    //   Authorization: 'Token token=' + store.user.token
+    // }
+  })
+}
+
 module.exports = {
   signUp,
   signIn,
@@ -197,5 +208,6 @@ module.exports = {
   deleteAllAdvice,
   takeNoAdvice,
   takeYesAdvice,
-  showTakeAdviceData
+  showTakeAdviceData,
+  showExampleAdvice
 }
