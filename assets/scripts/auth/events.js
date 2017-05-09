@@ -6,7 +6,6 @@ const api = require('./api')
 const ui = require('./ui')
 
 const onSignUp = function (event) {
-  console.log('sign up clicked')
   const data = getFormFields(this)
   event.preventDefault()
   api.signUp(data)
@@ -48,9 +47,7 @@ const onIndexAdvice = function (event) {
   event.preventDefault()
   $('.error-message').text('')
   $('.success-message').text('')
-  console.log('clicked button')
   const data = getFormFields(this)
-  console.log(data)
   api.showAdvice(data)
     .then(ui.adviceIndexSucces)
     .catch(ui.adviceIndexFail)
@@ -58,9 +55,7 @@ const onIndexAdvice = function (event) {
 
 const onAddAdvice = function (event) {
   event.preventDefault()
-  console.log('clicked button')
   const data = getFormFields(this)
-  console.log('this after get form fields', data)
   api.addAdvice(data)
     .then(ui.adviceAddSuccess)
     .catch(ui.adviceAddFail)
@@ -68,7 +63,6 @@ const onAddAdvice = function (event) {
 
 const onAddDefaultAdvice = function () {
   event.preventDefault()
-  console.log('clicked button')
   api.addDefaultAdvice()
     .then(ui.adviceAddDefaultSuccess)
     .catch(ui.adviceAddFail)
@@ -76,7 +70,6 @@ const onAddDefaultAdvice = function () {
 
 const onDeleteAdvice = function () {
   event.preventDefault()
-  console.log('delete this advice clicked button')
   if (store.currentNum >= 0 && store.advices[store.currentNum] !== undefined) {
     api.deleteAdvice()
       .then(ui.adviceDeleteSuccess)
@@ -87,7 +80,6 @@ const onDeleteAdvice = function () {
       })
       .catch(ui.adviceDeleteFail)
   } else {
-    console.log('something went wrong')
     $('#delete-advice-error').text('error, please display advice to delete')
     $('#delete-advice-success').text('')
   }
@@ -95,23 +87,16 @@ const onDeleteAdvice = function () {
 
 const onEditAdvice = function (event) {
   event.preventDefault()
-  console.log('clicked button')
   const data = getFormFields(this)
-  console.log('this after get form fields', data)
   const newAdvice = data.advice.idea
-  console.log(newAdvice)
   if (store.currentNum >= 0 && store.advices[store.currentNum] !== undefined) {
     api.editAdvice(data)
       .then(ui.adviceEditSuccess)
       .then((data) => {
-        console.log('click')
-        console.log(data)
-        console.log(newAdvice)
         $('#display_advice').text(newAdvice)
       })
       .catch(ui.adviceEditFail)
   } else {
-    console.log('something went wrong')
     $('#edit-advice-error').text('error, please make sure advice is selected and input is valid')
     $('#edit-advice-success').text('')
   }
@@ -133,10 +118,7 @@ const onDeleteAllAdvice = function () {
 
 const onTakeAdviceNo = function () {
   event.preventDefault()
-  console.log('cliked do not take advice')
-  console.log('advice id num is', store.currentNum)
   if (store.currentNum >= 0 && store.advices[store.currentNum] !== undefined) {
-    console.log('advice is ', store.advices[store.currentNum])
     api.takeNoAdvice()
       .then(ui.takeNoAdviceSuccess)
       .then(() => {
@@ -146,17 +128,13 @@ const onTakeAdviceNo = function () {
       })
       .catch(ui.takeNoAdviceFail)
   } else {
-    console.log('must you must select advice to take it')
     $('#take-advice-error').text('You must get advice before you can take it')
   }
 }
 
 const onTakeAdviceYes = function () {
   event.preventDefault()
-  console.log('cliked yes take advice')
-  console.log(store.currentNum)
   if (store.currentNum >= 0 && store.advices[store.currentNum] !== undefined) {
-    console.log('advice is ', store.advices[store.currentNum])
     api.takeYesAdvice()
       .then(ui.takeYesAdviceSuccess)
       .then(() => {
@@ -166,14 +144,12 @@ const onTakeAdviceYes = function () {
       })
       .catch(ui.takeYesAdviceFail)
   } else {
-    console.log('must you must select advice to take it')
     $('#take-advice-error').text('You must get advice before you can take it')
   }
 }
 
 const onTakeAdviceData = function () {
   event.preventDefault()
-  console.log('clicked button on take advice data')
   api.showTakeAdviceData()
     .then(ui.takeAdviceDataSucces)
     .catch(ui.takeAdviceDataFail)
@@ -181,7 +157,6 @@ const onTakeAdviceData = function () {
 
 const onGetExampleAdvice = function () {
   event.preventDefault()
-  console.log('clicked button on get example advice ')
   api.showExampleAdvice()
     .then(ui.exampleSuccess)
     .catch(ui.exampleFail)
@@ -189,7 +164,6 @@ const onGetExampleAdvice = function () {
 
 const onRandomUserName = function () {
   event.preventDefault()
-  console.log('clicked get user name ')
   api.getRandomUserName()
     .then(ui.userNameSuccess)
     .catch(ui.userNameFail)
