@@ -41,13 +41,35 @@
           </fieldset>
         </form>
 
+        <div class="success-message" id="add-default-advice-success"> </div>
+
+        <form id="add-default-advice" class="add-default-advice clear-input">
+              <fieldset>
+                <legend> Add Prewritten Advice </legend>
+                  <input class="push btn" type="submit" name="submit" value="Add Default Advice">
+                </fieldset>
+          </form>
+
+          <div class="error-message" id="add-advice-error"> </div>
+          <div class="success-message" id="add-advice-success"> </div>
+
+          <form id="add_advice" class="add-advice alter_advice clear-input">
+            <fieldset>
+              <legend> Add Advice </legend>
+                 <input type="text" name="advice[idea]" placeholder="Give yourself advice">
+                  <input class="push btn" type="submit" name="submit" value="Submit New Advice">
+                      <hr>
+                </fieldset>
+              </form>
+
+
         <div class="error-message" id="get-advice-error"> </div>
         <div class="error-message" id="take-advice-error"> </div>
         <div class="success-message" id="take-advice-success"> </div>
 
         <form id="get_advice" class="clear-input get_advice index-advice">
           <fieldset>
-            <legend> Get Advice </legend>
+            <legend> <h1>Get Advice</h1></legend>
             <div id="display_advice" class="display_advice"> Click below to get some advice </div>
             <label> Will you take this advice?
             <input class="take_advice push btn" id="take_advice_yes" type="button" name="yes_submit" value="Yes">
@@ -56,7 +78,9 @@
             <br>
             <input class="push btn" type="submit" name="submit" value="Get Advice">
           </fieldset>
+          <div><h5>note: advice loops randomly.  If you are getting the same advice or it seems like the advice isn't changing add more advice!</h5></div>
         </form>
+
 
 
             <div class="error-message" id="edit-advice-error"></div>
@@ -81,29 +105,6 @@
               <input class="push btn delete" type="submit" name="submit" value="Delete This Advice">
             </fieldset>
           </form>
-
-          <div class="success-message" id="add-default-advice-success"> </div>
-
-          <form id="add-default-advice" class="add-default-advice clear-input">
-                <fieldset>
-                  <legend> Add Prewritten Advice </legend>
-                    <input class="push btn" type="submit" name="submit" value="Add Default Advice">
-                  </fieldset>
-            </form>
-
-            <div class="error-message" id="add-advice-error"> </div>
-            <div class="success-message" id="add-advice-success"> </div>
-
-            <form id="add_advice" class="add-advice alter_advice clear-input">
-              <fieldset>
-                <legend> Add Advice </legend>
-                   <input type="text" name="advice[idea]" placeholder="Give yourself advice">
-                    <input class="push btn" type="submit" name="submit" value="Submit New Advice">
-                        <hr>
-                  </fieldset>
-                </form>
-
-
 
     <form id="get-take-advice-data" class="clear-input take-advice-data">
     <fieldset>
